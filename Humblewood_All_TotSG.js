@@ -1,16 +1,16 @@
 var iFileName = "Humblewood_All_TotSG.js";
 
-SourceList["HW"] = {
+SourceList.HW = {
 	name : "Humblewood",
 	abbreviation : "HW",
-	group : "Humblewood",
+	group : "Deck of Many",
 	url : "https://hitpointpress.com/humblewood/"
 };
 
-SourceList["HWS"] = {
+SourceList["HW:TotSG"] = {
 	name : "Humblewood: Tenders of the Scorched Grove",
-	abbreviation : "HWS",
-	group : "humblewood",
+	abbreviation : "HW:TotSG",
+	group : "Deck of Many",
 	url : "https://hitpointpress.com/humblewood/"
 };
 
@@ -765,7 +765,7 @@ SpellsList["invoke the amarinthine"] = {
 SpellsList["mend plants"] = {
 	name : "Mend Plants",
 	nameShort : "Gust Barrier",
-	source : ["HWS", 8],
+	source : ["HW:TotSG", 8],
 	defaultExcluded : false,
 	classes : ["druid", "sorcerer", "wizard"],
 	level : 0,
@@ -868,7 +868,7 @@ Subclasses
 AddSubClass("druid", "circle of the warden", {
 	regExpSearch : /^(?=.*(circle|druid))(?=.*warden).*$/i,
 	subname : "Circle of the Warden",
-	source : ["HWS", 8],
+	source : ["HW:TotSG", 8],
 	features : {
 		"subclassfeature2" : {
 			name : "Heartbeat of the Land",
@@ -964,7 +964,7 @@ AddSubClass("cleric", "community domain", {
 							fields.Description += (fields.Description ? '; ' : '') + 'Once per turn +' + (classes.known.cleric.level < 14 ? 1 : 2) + 'd8 radiant damage';
 						}
 					},
-					"Once per turn, I can have one of my weapon attacks that hit do extra radiant damage."
+					"Once per turn, I can have one of my weapon attacks that hit do extra psychic damage."
 				]
 			}
 		},
@@ -977,17 +977,13 @@ AddSubClass("cleric", "community domain", {
 	}
 });
 
+/*
 AddSubClass("cleric", "night domain", {
 	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*(night)).*$/i,
 	subname : "Night Domain",
 	source : ["HW", 40],
 	spellcastingExtra : ["sleep", "veil of dusk", "darkness", "moonbeam", "nondetection", "globe of twilight", "divination", "stellar bodies", "dream", "seeming"],
-	"subclassfeature1" : {
-		name : "Eye of Twilight",
-		source : ["HW", 40],
-		description : "\n " + "I gain 60 ft darkvision",
-		vision : [["Darkvision", 60]]
-	},
+	subclassfeature1: { name: "Eyes of Twilight", source: ["HW", 40], minlevel: 1, description: "\n   I gain 60 ft darkvision", vision: [["Darkvision", 60]] },
 	"subclassfeature1.1" : {
 		name : "Ward of Shadows",
 		source : ["HW", 40],
@@ -995,15 +991,15 @@ AddSubClass("cleric", "night domain", {
 			"When a creature I can see within 30 ft attacks me, I can impose disadvantage on the attack roll, so long as the creature can be blinded."
 		]),
 		usages : "Wisdom modifier per ",
-		usagecalc : "event.value = Math.max(1, What('Wis Mod'));",
+		usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
 		action : ["reaction", ""],
 		recovery : "long rest"
 	},
 	"subclassfeature2" : {
 		name : "Channel Divinity: Invocation of Night",
 		source : ["HW", 40],
-		description : desc(
-			["I can extinguish all magical and nonmagical light within 30 feet. Each enemy within 30 feet makes a Constitution save or is blinded for a number of rounds equal to my cleric level. They repeat the save at the end of their turns."
+		description : desc([
+			"I can extinguish all magical and nonmagical light within 30 feet. Each enemy within 30 feet makes a Constitution save or is blinded for a number of rounds equal to my cleric level. They repeat the save at the end of their turns."
 		])
 	},
 	"subclassfeature6" : {
@@ -1044,6 +1040,7 @@ AddSubClass("cleric", "night domain", {
 		actions : [["action", " (activate)"], ["action", " (deactivate)"]]
 	}
 });
+*/
 
 AddSubClass("fighter", "scofflaw", {
 	regExpSearch : /^(?=.*scofflaw).*$/i,
@@ -1374,7 +1371,7 @@ FeatsList["woodwise"] = {
 
 FeatsList["first responder"] = {
 	name : "First Responder",
-	source : ["HWS", 6],
+	source : ["HW:TotSG", 6],
 	descriptionFull : "You have been specially trained in magical triage and are able to identify the signs of shock and fatigue in those suffering from injuries. You are always ready to provide aid to those in need. You gain the following benefits:\nYou can tell by looking at a creature if it is missing any of its hit points and whether or not it has more than half of its hit points. You also instantly determine if the creature is cursed, diseased, possessed, or afflicted by any of the following conditions: blinded, deafened, exhaustion, frightened, incapacitated, paralyzed, petrified, poisoned, or stunned.\nYou learn the spare the dying cantrip and can cast it as a bonus action.\nYou gain the ability to cast the spell cure wounds without using a spell slot, up to a number of times equal to half your proficiency bonus. You regain all expended uses when you finish a long rest. Wisdom is your spellcasting ability for this spell.",
 	description : "I can instantly determine how many HP someone is missing and what conditions they have. I know spare the dying and can cast Cure Wounds up to half my proficiency bonus, using Wisdom.",
 	spellcastingBonus : [{
@@ -1395,7 +1392,7 @@ FeatsList["first responder"] = {
 
 FeatsList["flamewoken"] = {
 	name : "Flamewoken",
-	source : ["HWS", 7],
+	source : ["HW:TotSG", 7],
 	descriptionFull : "Living in the Scorched Grove or other areas touched by elemental fire can sometimes cause strange abilities to manifest among their inhabitants. Known as “flamewoken” by the Tenders, these gifted few have an ability to communicate with fire-aspected creatures and have power over flames. Tenders teach flamewoken among their order to hone their talents in service of nature. However, those outside of the order usually choose to keep their abilities hidden, as such powers are often seen as a curse. You gain the following benefits:\nYou can speak, read, and write Ignan.\nYou learn the produce flame cantrip. Wisdom is your spellcasting ability for this spell.\nAs a bonus action, you can strengthen the power of your flames. The next time you deal fire damage to one or more creatures before the end of your next turn, you can deal an additional 2d10 fire damage to one of those creatures. Once you use this feature, you can’t use it again until you complete a short or long rest.\nYou can whisper magical words in Ignan toward any nonmagical flames you can see within 30 feet of you that could fit within a 5-foot cube. As a bonus action, you can cause these flames to either grow by 5 feet in a single direction, provided there is fuel of some sort present in the new location, or you can extinguish the flames present in this space.",
 	description : "I know Ignan, can cast Produce Flame, can deal 2d10 extra fire damage once per short rest, can cause a 5-foot cube of fire grow by 5 feet in one direction or extinguish them.",
 	spellcastingBonus : [{
@@ -1408,11 +1405,4 @@ FeatsList["flamewoken"] = {
 	actions : ["bonus action", " (2d10 fire)"],
 	usages : 1,
 	recovery : "short rest"
-};
-
-FeatsList["forest sage"] = {
-	name : "Forest Sage",
-	source : ["HWS", 7],
-	descriptionFull : "The Tenders value diversity among ideas, and although they began as a purely druidic order, they have since learned to accept many different ways of thinking about the natural world, especially regarding the application of magic. You are either a wizard who has learned to temper your arcane research with an eye to maintaining the delicate balance of natural forces, or you are a druid who has learned a new understanding of natural magic through study and experimentation. You gain the following benefits:\nIncrease your Intelligence or Wisdom score by 1, to a maximum of 20.\nYou can use your choice of Intelligence or Wisdom to make Animal Handling, Arcana, Nature, or Survival checks.\nYou can choose to learn two spells from either the druid or wizard spell list. Spells you choose must be of a level you can cast. The chosen spells count as spells of your class and are added to your spellbook if you are a wizard. The chosen spells use your spellcasting ability.",
-	description : "I can use INT or WIS for Animal Handling, Arcana, Nature, and Survival. I learn two spells from the wizard or druid lists, using my spellcasting ability."
 };
