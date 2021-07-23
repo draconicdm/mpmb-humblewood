@@ -957,7 +957,7 @@ AddSubClass("cleric", "night domain", {
 			source: ["HW", 40],
 			minlevel: 1,
 			description: "\n   I gain 60 ft darkvision",
-			vision: [["Darkvision", 60]]
+			vision: [["Darkvision (magical darkness)", 120]]
 		},
 		"subclassfeature1.1" : {
 			name : "Ward of Shadows",
@@ -986,7 +986,7 @@ AddSubClass("cleric", "night domain", {
 			name : "Eye of Twilight improvement",
 			source : ["HW", 40],
 			description : desc(["I have darkvision out to 120 feet, that works in both magical and nonmagical darkness."]),
-			vision : [["Darkvision", "+60"]]
+			vision : [["Darkvision", 120]]
 		},
 		"subclassfeature8.1" : {
 			name : "Veil of Dreams",
@@ -1494,8 +1494,8 @@ BackgroundList["wind-touched"] = {
 	lifestyle : "modest"
 };
 
-BackgroundFeatureList["Supernatural Presence"] = {
-	description : "Whether or not you are truly Wind-Touched, there are folk all across Everden that believe that you have been divinely blessed. If you make a show of power or skill that can be attributed to the wind or air, such as feats of acrobatics or commanding unseen forces, those believers will be bolstered by your supernatural presence. They will support you and, depending on how well you have convinced them of your powers, treat you with reverence and possibly even worship.",
+BackgroundFeatureList["supernatural presence"] = {
+	description : "People believe I am divinely blessed. Believers will support me if I perform feats of power or skill attributed to air or wind, such as feats of acrobatics or commanding unseen forces. Followers will support me, treat me with reverence or even worship.",
 	source : ["HW", 46]
 };
 
