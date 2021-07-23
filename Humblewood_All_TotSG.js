@@ -15,627 +15,6 @@ SourceList["HW:TotSG"] = {
 };
 
 /*
-Races
-*/
-RaceList["dusk corvum"] = {
-	regExpSearch : /^(?=.*corvum)(?=.*(dusk)).*$/i,
-	name : "Dusk Corvum",
-	sortname : "Corvum, Dusk",
-	source : ["HW", 12],
-	plural : "Dusk Corvums",
-	size : 3,
-	speed : { walk : { spd : 30, enc: 20 }},
-	languageProfs : ["Birdfolk", "Auran (can't speak)"],
-	skillstxt : "Choose one from Arcana, History, Nature, or Religion.",
-	weaponOptions : {
-		baseWeapon : "unarmed strike",
-		regExpSearch : /^(?=.*corvum)(?=.*\btalons?\b).*$/i,
-		name : "Corvum Talons",
-		source : ["HW", 12],
-		damage : [1, 4, "piercing"]
-	},
-	weaponsAdd : ["Corvum Talons"],
-	age : " reach adulthood at 18 years and live until around 70",
-	height : " range from 4 and a half to 5 feet",
-	weight : " weigh around 100 lbs",
-	improvements : "Dusk Corvum: +2 Intelligence and +1 Dexterity.",
-	scores : [0, 1, 0, 2, 0, 0],
-	trait : "Dusk Corvum (+2 Intelligence and +1 Dexterity)" + (typePF ? " " : "\n") + "Talons: I can unarmed strike for 1d4 piercing damage, and have advantage on Athletics to climb.\nLearned: I have proficiency in Arcana, History, Nature, or Religion.\nAppraising Eye: I can spend an action to determine magical properties, activation, and estimate market price of any item, once per short rest.\nSkulker: I have advantage on Stealth checks in dim light or darkness.\nStreet Smarts: I have proficiency in the Insight skill.",
-	features : {
-		"glide" : {
-			name : "Glide",
-			minlevel : 1,
-			action : ["reaction", " (falling)"]
-		},
-		"appraising eye" : {
-			name : "Appraising Eye",
-			minlevel : 1,
-			usages : 1,
-			recovery : "short rest",
-			action : ["action", ""],
-		}
-	}
-};
-
-RaceList["kindled corvum"] = {
-	regExpSearch : /^(?=.*corvum)(?=.*(kindled)).*$/i,
-	name : "Kindled Corvum",
-	sortname : "Corvum, Kindled",
-	source : ["HW", 12],
-	plural : "Kindled Corvums",
-	size : 3,
-	speed : { walk : { spd : 30, enc: 20 }},
-	languageProfs : ["Birdfolk", "Auran (can't speak)"],
-	skillstxt : "Choose one from Arcana, History, Nature, or Religion.",
-	weaponOptions : {
-		baseWeapon : "unarmed strike",
-		regExpSearch : /^(?=.*corvum)(?=.*\btalons?\b).*$/i,
-		name : "Corvum Talons",
-		source : ["HW", 12],
-		damage : [1, 4, "piercing"]
-	},
-	weaponsAdd : ["Corvum Talons"],
-	age : " reach adulthood at 18 years and live until around 70",
-	height : " range from 4 and a half to 5 feet",
-	weight : " weigh around 100 lbs",
-	improvements : "Kindled Corvum: +2 Intelligence and +1 Charisma.",
-	scores : [0, 0, 0, 2, 0, 1],
-	trait : "Kindled Corvum (+2 Intelligence and +1 Charisma)" + (typePF ? " " : "\n") + "Talons: I can unarmed strike for 1d4 piercing damage, and have advantage on Athletics to climb.\nLearned: I have proficiency in Arcana, History, Nature, or Religion.\nAppraising Eye: I can spend an action to determine magical properties, activation, and estimate market price of any item, once per short rest.\nConvincing: I have proficiency in Deception or Persuasion, with advantage to convince people on topics related to the skill I got from the Learned trait.\nSharp Mind: I learn an additional language, a tool proficiency, and perfect memory on everything I have seen or heard in the past month.",
-	features : {
-		"glide" : {
-			name : "Glide",
-			minlevel : 1,
-			action : ["reaction", " (falling)"]
-		},
-		"appraising eye" : {
-			name : "Appraising Eye",
-			minlevel : 1,
-			usages : 1,
-			recovery : "short rest",
-			action : ["action", ""],
-		}
-	}
-};
-
-RaceList["bright gallus"] = {
-	regExpSearch : /^(?=.*gallus)(?=.*(bright)).*$/i,
-	name : "Bright Gallus",
-	sortname : "Gallus, Bright",
-	source : ["HW", 15],
-	plural : "Bright Gallus",
-	size : 3,
-	speed : { walk : { spd : 30, enc: 20 }},
-	skills : ["Insight"],
-	languageProfs : ["Birdfolk", "Auran (can't speak)"],
-	weaponprofs : [true, false, []],
-	toolProfs : [["brewer's, carpenter's, or smith's tools", 1]],
-	age : " reach adulthood at 18 years and live until around 70",
-	height : " range from 4 to 5 feet",
-	weight : " weigh around 90 lbs",
-	improvements : "Bright Gallus: +2 Wisdom and +1 Charisma.",
-	scores : [0, 0, 0, 0, 2, 1],
-	trait : "Bright Gallus (+2 Wisdom and +1 Charisma)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nCommunal: History checks about the history, culture, or community of my race are made with double proficiency bonus.\nInpsiring: I can inspire an ally as an action. They can add a d4 to their next ability check, attack roll, or save.",
-	features : {
-		"glide" : {
-			name : "Glide",
-			minlevel : 1,
-			action : ["reaction", " (falling)"]
-		},
-		"wing flap" : {
-			name : "Wing Flap",
-			minlevel : 1,
-			action : ["bonus action", ""]
-		}
-	}
-};
-
-RaceList["huden gallus"] = {
-	regExpSearch : /^(?=.*gallus)(?=.*(huden)).*$/i,
-	name : "Huden Gallus",
-	sortname : "Gallus, Huden",
-	source : ["HW", 15],
-	plural : "Huden Gallus",
-	size : 3,
-	speed : { walk : { spd : 30, enc: 20 }},
-	skills: ["Nature"],
-	languageProfs : ["Birdfolk", "Auran (understand only)"],
-	weaponprofs : [true, false, []],
-	toolProfs : [["brewer's, carpenter's, or smith's tools", 1]],
-	age : " reach adulthood at 18 years and live until around 70",
-	height : " range from 4 to 5 feet",
-	weight : " weigh around 90 lbs",
-	improvements : "Huden Gallus: +2 Wisdom and +1 Dexterity.",
-	scores : [0, 1, 0, 0, 2, 0],
-	trait : "Huden Gallus (+2 Wisdom and +1 Dexterity)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nCommunal: History checks about the history, culture, or community of my race are made with double proficiency bonus.\nSeedspeech. I can communicate simple ideas to plants, and am able to interpret their responses in simple language.",
-	features : {
-		"glide" : {
-			name : "Glide",
-			minlevel : 1,
-			action : ["reaction", " (falling)"]
-		},
-		"wing flap" : {
-			name : "Wing Flap",
-			minlevel : 1,
-			action : ["bonus action",""]
-		}
-	}
-};
-
-RaceList["sable luma"] = {
-	regExpSearch : /^(?=.*luma)(?=.*(sable)).*$/i,
-	name : "Sable Luma",
-	sortname : "Luma, Sable",
-	source : ["HW", 17],
-	plural : "Sable Lumas",
-	size : 2,
-	speed : {walk : {spd : 25, enc: 15}},
-	savetxt : { adv_vs : ["poison"]},
-	dmgres : ["Poison"],
-	languageProfs : ["Birdfolk", "Auran (can't speak)"],
-	age : " reach adulthood around 20, live until 70.",
-	height : " around 3 feet tall.",
-	weight : " around 30 lbs.",
-	improvements : "Sable Luma: +2 Charisma and +1 Constitution;",
-	scores : [0, 0, 1, 0, 0, 2],
-	trait : "Sable Luma (+2 Charisma and +1 Constitution)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nFated: Once per Long Rest I can reroll any attack, skill check, or saving throw before the outcome is known.\nHard to Read: Insight checks against me have disadvantage, and my deception checks against non-luma have advantage.",
-	abilitysave : 6,
-	spellcastingAbility : 6,
-	features : {
-		"glide" : {
-			name : "Glide",
-			minlevel : 1,
-			action : ["reaction", " (falling)"]
-		},
-		"wing flap" : {
-			name : "Wing Flap",
-			minlevel : 1,
-			action : ["bonus action",""]
-		}
-	},
-	spellcastingBonus : {
-		name : "Touched",
-		"class" : "sorcerer",
-		level : [0, 0],
-		firstcol : 'atwill'
-	}
-};
-
-RaceList["sera luma"] = {
-	regExpSearch : /^(?=.*luma)(?=.*(sera)).*$/i,
-	name : "Sera Luma",
-	sortname : "Luma, Sera",
-	source : ["HW", 17],
-	plural : "Sera Lumas",
-	size : 2,
-	speed : {walk : {spd : 25, enc: 15}},
-	skills : ["Performance"],
-	languageProfs : ["Birdfolk", "Auran (can't speak)"],
-	age : " reach adulthood around 20, live until 70.",
-	height : " around 3 feet tall.",
-	weight : " around 30 lbs.",
-	improvements : "Sable Luma: +2 Charisma and +1 Constitution;",
-	scores : [0, 0, 1, 0, 0, 2],
-	trait : "Sable Luma (+2 Charisma and +1 Constitution)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nFated: Once per Long Rest I can reroll any attack, skill check, or saving throw before the outcome is known.",
-	abilitysave : 6,
-	spellcastingAbility : 6,
-	features : {
-		"glide" : {
-			name : "Glide",
-			minlevel : 1,
-			action : ["reaction", " (falling)"]
-		},
-		"wing flap" : {
-			name : "Wing Flap",
-			minlevel : 1,
-			action : ["bonus action",""]
-		},
-		"charm person" : {
-			name : "Charm Person",
-			minlevel : 1,
-			usages : 1,
-			recovery : "long rest",
-			tooltip : "(Songbird)",
-			action : ["action", ""],
-			spellcastingBonus : {
-				name : "Songbird",
-				spells : ["charm person"],
-				selection : ["charm person"],
-				oncelr : true
-			}
-		}
-	},
-	spellcastingBonus : {
-		name : "Touched",
-		"class" : "sorcerer",
-		level : [0, 0],
-		firstcol : 'atwill'
-	}
-};
-
-RaceList["maran raptor"] = {
-	regExpSearch : /^(?=.*raptor)(?=.*(maran)).*$/i,
-	name : "Maran Raptor",
-	sortname : "Raptor, Maran",
-	source : ["HW", 18],
-	plural : "Maran Raptors",
-	size : 2,
-	speed : {
-		walk : {spd : 25, enc : 15},
-		swim : {spd : 25, enc : 15}
-	},
-	skills : ["Perception"],
-	weaponOptions : {
-		baseWeapon : "unarmed strike",
-		regExpSearch : /^(?=.*raptor)(?=.*\btalons?\b).*$/i,
-		name : "Raptor Talons",
-		source : ["HW", 12],
-		damage : [1, 4, "piercing"]
-	},
-	weaponsAdd : ["Raptor Talons"],
-	languageProfs : ["Birdfolk", "Auran (can't speak)"],
-	weaponprofs : [false, false, ["longbow", "shortbow", "spear"]],
-	age : " reach maturity around 20, living over 100 years.",
-	height : " less than 4 feet tall.",
-	weight : " around 35 lbs.",
-	improvements : "Maran Raptor: +2 Dexterity and +1 Intelligence;",
-	scores : [0, 2, 0, 1, 0, 0],
-	trait : "Maran Raptor (+2 Dexterity and +1 Intelligence)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nTalons: My unarmed strikes deal 1d4 piercing damage and I have advantage on Athletics check for climbing.\nWoodland Hunter: I turn 3/4 cover into half cover and half cover into no cover.\nHunter's Training: Longbows are not heavy weapons for me.\nPatient: I have advantage on an attack roll or ability check made as part of a readied action.",
-	features : {
-		"glide" : {
-			name : "Glide",
-			minlevel : 1,
-			action : ["reaction", " (falling)"]
-		}
-	}
-};
-
-RaceList["mistral raptor"] = {
-	regExpSearch : /^(?=.*raptor)(?=.*(mistral)).*$/i,
-	name : "Mistral Raptor",
-	sortname : "Raptor, Mistral",
-	source : ["HW", 18],
-	plural : "Mistral Raptors",
-	size : 2,
-	speed : {
-		walk : {spd : 25, enc : 15}
-	},
-	skills : ["Perception", "Acrobatics"],
-	weaponOptions : {
-		baseWeapon : "unarmed strike",
-		regExpSearch : /^(?=.*raptor)(?=.*\btalons?\b).*$/i,
-		name : "Raptor Talons",
-		source : ["HW", 12],
-		damage : [1, 4, "piercing"]
-	},
-	weaponsAdd : ["Raptor Talons"],
-	languageProfs : ["Birdfolk", "Auran (can't speak)"],
-	weaponprofs : [false, false, ["longbow", "shortbow", "spear"]],
-	age : " reach maturity around 20, living over 100 years.",
-	height : " less than 4 feet tall.",
-	weight : " around 35 lbs.",
-	improvements : "Mistral Raptor: +2 Dexterity and +1 Wisdom;",
-	scores : [0, 2, 0, 0, 1, 0],
-	trait : "Mistral Raptor (+2 Dexterity and +1 Wisdom)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nTalons: My unarmed strikes deal 1d4 piercing damage and I have advantage on Athletics check for climbing.\nWoodland Hunter: I turn 3/4 cover into half cover and half cover into no cover.\nHunter's Training: Longbows are not heavy weapons for me.\nAerial Defense: Attacks against me while I'm falling, gliding, or jumping have disadvantage.",
-	features : {
-		"glide" : {
-			name : "Glide",
-			minlevel : 1,
-			action : ["reaction", " (falling)"]
-		}
-	}
-};
-
-RaceList["stout strig"] = {
-	regExpSearch : /^(?=.*strig)(?=.*(stout)).*$/i,
-	name : "Stout Strig",
-	sortname : "Strig, Stout",
-	source : ["HW", 20],
-	plural : "Stout Strigs",
-	size : 3,
-	speed : {walk : {spd : 30, enc : 20}},
-	skills : ["Intimidation"],
-	weapons : ["Strig Talons"],
-	languageprofs : ["Birdfolk", "Auran (can't speak)"],
-	vision : [["Darkvision", 60]],
-	age : " mature around 15, live to 80.",
-	height : " 4 to 5 feet.",
-	weight : " around 110 lbs.",
-	improvements : "Stout Strig: +2 Strength and +1 Constitution.",
-	scores : [2, 0, 1, 0, 0, 0],
-	trait : "Stout Strig (+2 Strength and +1 Constitution)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nTalons: My unarmed strikes deal 1d4 piercing damage and I have advantage on Athletics check for climbing.\nPatterned Feathers: I have advantage on Stealth checks to hide in a forest.\nBrawler: When I hit someone with my talons I can grapple them as a bonus action.",
-	features : {
-		"glide" : {
-			name : "Glide",
-			minlevel : 1,
-			action : ["reaction", " (falling)"]
-		},
-		"brawler" : {
-			name : "Brawler",
-			minlevel : 1,
-			action : ["bonus action", " (grapple)"]
-		}
-	}
-};
-
-RaceList["swift strig"] = {
-	regExpSearch : /^(?=.*strig)(?=.*(swift)).*$/i,
-	name : "Swift Strig",
-	sortname : "Strig, Swift",
-	source : ["HW", 20],
-	plural : "Swift Strigs",
-	size : 3,
-	speed : {walk : {spd : 35, enc : 25}},
-	skills : ["Survival"],
-	weapons : ["Strig Talons"],
-	languageprofs : ["Birdfolk", "Auran (can't speak)"],
-	vision : [["Darkvision", 60]],
-	age : " mature around 15, live to 80.",
-	height : " 4 to 5 feet.",
-	weight : " around 110 lbs.",
-	improvements : "Swift Strig: +2 Strength and +1 Dexterity.",
-	scores : [2, 1, 0, 0, 0, 0],
-	trait : "Swift Strig (+2 Strength and +1 Dexterity)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nTalons: My unarmed strikes deal 1d4 piercing damage and I have advantage on Athletics check for climbing.\nPatterned Feathers: I have advantage on Stealth checks to hide in a forest.",
-	features : {
-		"glide" : {
-			name : "Glide",
-			minlevel : 1,
-			action : ["reaction", " (falling)"]
-		}
-	}
-};
-
-WeaponsList["strig talons"] = {
-	regExpSearch : /^(?=.*strig)(?=.*\btalons?\b).*$/i,
-	name : "Strig Talons",
-	soruce : ["HW", 18],
-	ability : 1,
-	type : "Natural",
-	damage : [1, 4, "piercing"],
-	range : "Melee",
-	description : "",
-	abilitytodamage : true,
-	monkweapon : true
-};
-
-RaceList["grove cervan"] = {
-	regExpSearch : /^(?=.*cervan)(?=.*(grove)).*$/i,
-	name : "Grove Cervan",
-	sortname : "Cervan, Grove",
-	source : ["HW", 22],
-	plural : "Grove Cervans",
-	size : 3,
-	speed : {walk : {spd : 35, enc : 25}},
-	skillstxt : "Choose one from Athletics, Medicine, Nature, or Survival",
-	languageprofs : ["Birdfolk", "Cervan (no writing)"],
-	age : " mature around 12, live for 100-150 years.",
-	height : " 5 to 6 feet.",
-	weight : " 130-180 lbs.",
-	improvements : "Grove Cervan: +2 Constitution and +1 Dexterity.",
-	scores : [0, 1, 2, 0, 0, 0],
-	trait : "Grove Cervan (+2 Constitution and +1 Dexterity)" + (typePF ? " " : "\n") + "Practical: I gain proficiency in Athletics, Medicine, Nature, or Survival.\nSurge of Vigor: If an attack does more than half of my remaining hit points in damage, I regain 1d12 + my Constitution modifier immediately, once per long rest.\nStanding Leap: my long jump is 30 and my high jump is 15 without running start.\nNimble Step: Opportunity attacks made against me are at disadvantage.",
-	features : {
-		"surge of vigor" : {
-			name : "Surge of Vigor",
-			usages : 1,
-			recovery : "long rest"
-		}
-	}
-};
-
-RaceList["pronghorn cervan"] = {
-	regExpSearch : /^(?=.*cervan)(?=.*(pronghorn)).*$/i,
-	name : "Pronghorn Cervan",
-	sortname : "Cervan, Pronghorn",
-	source : ["HW", 22],
-	plural : "Pronghorn Cervans",
-	size : 3,
-	speed : {walk : {spd : 30, enc : 20}},
-	skillstxt : "Choose one from Athletics, Medicine, Nature, or Survival",
-	languageprofs : ["Birdfolk", "Cervan (no writing)"],
-	weapons : ["Antlers"],
-	age : " mature around 12, live for 100-150 years.",
-	height : " close to 7 feet.",
-	weight : " over 200 lbs.",
-	improvements : "Pronghorn Cervan: +2 Constitution and +1 Strength.",
-	scores : [1, 0, 2, 0, 0, 0],
-	trait : "Pronghorn Cervan (+2 Constitution and +1 Strength)" + (typePF ? " " : "\n") + "Practical: I gain proficiency in Athletics, Medicine, Nature, or Survival.\nSurge of Vigor: If an attack does more than half of my remaining hit points in damage, I regain 1d12 + my Constitution modifier immediately, once per long rest.\nRobust Build: My carrying capacity is doubled, as is the weight I can push, drag, or lift.\nAntlers: I can gore with my antlers. I can also charge as a bonus action if I spend 20 feet in a straight line, doing 1d6 extra damage. If the target is Large or smaller, they make a Strength save DC 8 + Strength + proficiency or are pushed 10 feet back.",
-	features : {
-		"surge of vigor" : {
-			name : "Surge of Vigor",
-			usages : 1,
-			recovery : "long rest"
-		},
-		"charge" : {
-			name : "Charge",
-			actions : ["bonus action", ""]
-		}
-	},
-	carryingCapacity : 2
-};
-
-WeaponsList["antlers"] = {
-	regExpSearch : /^(?=.*\bantlers?\b).*$/i,
-	name : "Antlers",
-	source : ["HW", 23],
-	ability : 1,
-	type : "Natural",
-	damage : [1, 6, "piercing"],
-	range : "Melee",
-	description : "",
-	abilitytodamage : true,
-	dc : true,
-	monkweapon : true
-}
-
-RaceList["hedge"] = {
-	regExpSearch : /^(?=.*hedge).*$/i,
-	name : "Hedge",
-	source : ["HW", 24],
-	plural : "Hedges",
-	size : 2,
-	speed : {
-		walk : {spd : 25, enc: 15},
-		burrow : {spd : 15, enc: 10}
-	},
-	languageProfs : ["Birdfolk", "Hedge"],
-	armorOptions : {
-		regExpSearch : /^(?=.*spiny)(?=.*quills).*$/i,
-		name : "Spiny Quills",
-		source : ["HW", 25],
-		ac : 14
-	},
-	age : " mature around 20, live for 120 years.",
-	height : " are between 3 and 4 feet tall.",
-	weight : " weigh around 70 lbs.",
-	improvements : "Hedge: +2 Charisma and +1 Wisdom.",
-	scores : [0, 0, 0, 0, 1, 2],
-	trait : "Hedge (+2 Charisma and +1 Wisdom)" + (typePF ? " " : "\n") + "Natural Burrower: I can burrow through soil but not anything more substantial.\nSpiny Quills: I can't wear armor but can use shields. My AC is 14 + DEX\nCurl Up: I can use my action to curl up. While curled up, I can't move, attack, or cast spells with S components. My AC becomes 19, ignoring DEX. I can still use a shield. A creature that misses me with a melee attack takes 2d4 piercing damage. If I'm hit while curled up, I get knocked prone.\nI can communicate simple ideas with bugs.",
-	spellcastingAbility : 6,
-	spellcastingBonus : [{
-		name : "Forest Magic",
-		spells : ["druidcraft"],
-		selection : ["druidcraft"],
-		firstCol : 'atwill'
-	}],
-	features : {
-		"animal messenger" : {
-			name : "Forest Magic",
-			minlevel : 1,
-			usages : 1,
-			recovery : "short rest",
-			spellcastingBonus : {
-				name : "Forest Magic",
-				spells : ["animal messenger"],
-				selection : ["animal messenger"],
-				firstCol : 'oncesr'
-			}
-		},
-		"curl up" : {
-			name : "Curl Up",
-			minlevel : 1,
-			actions : ["action", ""]
-		}
-	}
-};
-
-RaceList["jerbeen"] = {
-	regExpSearch : /^(?=.*hedge).*$/i,
-	name : "Jerbeen",
-	source : ["HW", 27],
-	plural : "Jerbeens",
-	size : 2,
-	speed : {walk : {spd : 30, enc : 20}},
-	languageProfs : ["Birdfolk", "Jerbeen"],
-	age : " mature around 5 years and live for 40",
-	height : " stand between 2 and 3 feet tall",
-	weight : " weigh between 20-40 lbs.",
-	improvements: "Jerbeen: +2 Dexterity and +1 Charisma",
-	scores : [0, 2, 0, 0, 0, 1],
-	trait : "Jerbeen (+2 Dexterity and +1 Charisma)" + (typePF ? " " : "\n") + "Standing Leap: My long jump is 30 feet and high jump is 15 feet, without running start.\nNimbleness: I can move through the space of a creature a larger size than me.\nTake Heart: I have advantage on STR saves and saves against frighten if I have a non-frightened and non-incapacitated ally I can see or hear within 5 feet.\nTeam Tactics: I can use the Help action as a bonus action.",
-	features : {
-		"team tactics" : {
-			name : "Help",
-			actions : ["bonus action", ""]
-		}
-	}
-};
-
-RaceList["mapach"] = {
-	regExpSearch : /^(?=.*mapach).*$/i,
-	name : "Mapach",
-	source : ["HW", 28],
-	plural : "Mapachs",
-	size : 3,
-	speed : {
-		walk : { spd : 30, enc: 20 },
-		climb : { spd : 20, enc: 10 }
-	},
-	languageProfs : ["Birdfolk", "Mapach"],
-	vision : [["Darkvision", 60]],
-	savetxt : { adv_vs : ["poison"]},
-	dmgres : ["Poison"],
-	toolProfs : ["Tinker's Tools"],
-	age : " mature at an average pace, reaching adulthood at 15 years and live well past 90",
-	height : " range from 4 to 5 feet",
-	weight : " weigh around 90-160 lbs",
-	improvements : "Mapach: +2 Wisdom and +1 Constitution;",
-	scores : [0, 0, 1, 0, 2, 0],
-	trait : "Mapach (+2 Wisdom and +1 Constitution)" + (typePF ? " " : "\n") + "Expert Climbers: I have a climbing speed of 20 feet.\nScroungecraft: I can construct crude versions of common items from materials around me. 10 minutes to craft a tool or piece of adenturing gear worth 30 gp or less, lasting 1 hour. Can spend 8 hours to make a scroungecrafted item permanent.\nSkulker: advantage on Stealth checks made in dim light and darkness.",
-};
-
-RaceList["vulpin"] = {
-	regExpSearch : /vulpin/i,
-	name : "Vulpin",
-	source : ["HW", 30],
-	plural : "Vulpin",
-	size : 3,
-	speed : { walk : { spd : 30, enc: 20 }},
-	languageProfs : ["Birdfolk", "Vulpin"],
-	weaponOptions : {
-		baseWeapon : "unarmed strike",
-		regExpSearch : /^(?=.*vulpin)(?=.*\bbite?\b).*$/i,
-		name : "Vulpin Bite",
-		source : ["HW", 30],
-		damage : [1, 6, "piercing"],
-		description : "Finesse;"
-	},
-	weaponsAdd : ["Vulpin Bite"],
-	vision : [["Darkvision", 60]],
-	age : " mature at an average pace, reaching adulthood at 15 years and live well past 90",
-	height : " range from 4 and a half to 5 feet",
-	weight : " weigh around 90-140 lbs",
-	improvements : "Vulpin: +2 Intelligence and +1 Charisma;",
-	scores : [0, 0, 0, 2, 0, 1],
-	trait : "Vulpin (+2 Intelligence and +1 Charisma)" + (typePF ? " " : "\n") + "Bite: I can bite as an unarmed strike, dealing 1d6 piercing damage. Can use STR or DEX.\nBewitching Guile: I can cast charm person at level 1, ambush prey at level 3, and fear at level 5, using Intelligence.",
-	abilitysave : 4,
-	spellcastingAbility : 4,
-	features : {
-		"charm person" : {
-			name : "Charm Person",
-			minlevel : 1,
-			usages : 1,
-			recovery : "long rest",
-			tooltip : "(Bewitching Guile)",
-			action : ["action", ""],
-			spellcastingBonus : {
-				name : "Bewitching Guile (level 1)",
-				spells : ["charm person"],
-				selection : ["charm person"],
-				oncelr : true
-			}
-		},
-		"ambush prey" : {
-			name : "Ambush Prey",
-			minlevel : 3,
-			usages : 1,
-			recovery : "long rest",
-			tooltip : "(Bewitching Guile)",
-			action : ["action", ""],
-			spellcastingBonus : {
-				name : "Bewitching Guile (level 3)",
-				spells : ["ambush prey"],
-				selection : ["ambush prey"],
-				oncelr : true
-			}
-		},
-		"fear" : {
-			name : "Fear",
-			minlevel : 5,
-			usages : 1,
-			recovery : "long rest",
-			tooltip : "(Bewitching Guile)",
-			action : ["action", ""],
-			spellcastingBonus : {
-				name : "Bewitching Guile (level 5)",
-				spells : ["fear"],
-				selection : ["fear"],
-				oncelr : true
-			}
-		}
-	}
-};
-
-/*
 Spells
 */
 SpellsList["ambush prey"] = {
@@ -863,6 +242,596 @@ SpellsList["veil of dusk"] = {
 };
 
 /*
+Races
+*/
+RaceList["dusk corvum"] = {
+	regExpSearch : /^(?=.*corvum)(?=.*(dusk)).*$/i,
+	name : "Dusk Corvum",
+	sortname : "Corvum, Dusk",
+	source : ["HW", 12],
+	plural : "Dusk Corvums",
+	size : 3,
+	speed : { walk : { spd : 30, enc: 20 }},
+	languageProfs : ["Birdfolk", "Auran (can't speak)"],
+	skillstxt : "Choose one from Arcana, History, Nature, or Religion.",
+	weaponsAdd : ["Birdfolk Talons"],
+	age : " reach adulthood at 18 years and live until around 70",
+	height : " range from 4 and a half to 5 feet",
+	weight : " weigh around 100 lbs",
+	improvements : "Dusk Corvum: +2 Intelligence and +1 Dexterity.",
+	scores : [0, 1, 0, 2, 0, 0],
+	trait : "Dusk Corvum (+2 Intelligence and +1 Dexterity)" + (typePF ? " " : "\n") + "Talons: I can unarmed strike for 1d4 piercing damage, and have advantage on Athletics to climb.\nLearned: I have proficiency in Arcana, History, Nature, or Religion.\nAppraising Eye: I can spend an action to determine magical properties, activation, and estimate market price of any item, once per short rest.\nSkulker: I have advantage on Stealth checks in dim light or darkness.\nStreet Smarts: I have proficiency in the Insight skill.",
+	features : {
+		"glide" : {
+			name : "Glide",
+			minlevel : 1,
+			action : ["reaction", " (falling)"]
+		},
+		"appraising eye" : {
+			name : "Appraising Eye",
+			minlevel : 1,
+			usages : 1,
+			recovery : "short rest",
+			action : ["action", ""],
+		}
+	}
+};
+
+RaceList["kindled corvum"] = {
+	regExpSearch : /^(?=.*corvum)(?=.*(kindled)).*$/i,
+	name : "Kindled Corvum",
+	sortname : "Corvum, Kindled",
+	source : ["HW", 12],
+	plural : "Kindled Corvums",
+	size : 3,
+	speed : { walk : { spd : 30, enc: 20 }},
+	languageProfs : ["Birdfolk", "Auran (can't speak)"],
+	skillstxt : "Choose one from Arcana, History, Nature, or Religion.",
+	weaponsAdd : ["Birdfolk Talons"],
+	age : " reach adulthood at 18 years and live until around 70",
+	height : " range from 4 and a half to 5 feet",
+	weight : " weigh around 100 lbs",
+	improvements : "Kindled Corvum: +2 Intelligence and +1 Charisma.",
+	scores : [0, 0, 0, 2, 0, 1],
+	trait : "Kindled Corvum (+2 Intelligence and +1 Charisma)" + (typePF ? " " : "\n") + "Talons: I can unarmed strike for 1d4 piercing damage, and have advantage on Athletics to climb.\nLearned: I have proficiency in Arcana, History, Nature, or Religion.\nAppraising Eye: I can spend an action to determine magical properties, activation, and estimate market price of any item, once per short rest.\nConvincing: I have proficiency in Deception or Persuasion, with advantage to convince people on topics related to the skill I got from the Learned trait.\nSharp Mind: I learn an additional language, a tool proficiency, and perfect memory on everything I have seen or heard in the past month.",
+	features : {
+		"glide" : {
+			name : "Glide",
+			minlevel : 1,
+			action : ["reaction", " (falling)"]
+		},
+		"appraising eye" : {
+			name : "Appraising Eye",
+			minlevel : 1,
+			usages : 1,
+			recovery : "short rest",
+			action : ["action", ""],
+		}
+	}
+};
+
+RaceList["bright gallus"] = {
+	regExpSearch : /^(?=.*gallus)(?=.*(bright)).*$/i,
+	name : "Bright Gallus",
+	sortname : "Gallus, Bright",
+	source : ["HW", 15],
+	plural : "Bright Gallus",
+	size : 3,
+	speed : { walk : { spd : 30, enc: 20 }},
+	skills : ["Insight"],
+	languageProfs : ["Birdfolk", "Auran (can't speak)"],
+	weaponprofs : [true, false, []],
+	toolProfs : [["brewer's, carpenter's, or smith's tools", 1]],
+	age : " reach adulthood at 18 years and live until around 70",
+	height : " range from 4 to 5 feet",
+	weight : " weigh around 90 lbs",
+	improvements : "Bright Gallus: +2 Wisdom and +1 Charisma.",
+	scores : [0, 0, 0, 0, 2, 1],
+	trait : "Bright Gallus (+2 Wisdom and +1 Charisma)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nCommunal: History checks about the history, culture, or community of my race are made with double proficiency bonus.\nInpsiring: I can inspire an ally as an action. They can add a d4 to their next ability check, attack roll, or save.",
+	features : {
+		"glide" : {
+			name : "Glide",
+			minlevel : 1,
+			action : ["reaction", " (falling)"]
+		},
+		"wing flap" : {
+			name : "Wing Flap",
+			minlevel : 1,
+			action : ["bonus action", ""]
+		}
+	}
+};
+
+RaceList["huden gallus"] = {
+	regExpSearch : /^(?=.*gallus)(?=.*(huden)).*$/i,
+	name : "Huden Gallus",
+	sortname : "Gallus, Huden",
+	source : ["HW", 15],
+	plural : "Huden Gallus",
+	size : 3,
+	speed : { walk : { spd : 30, enc: 20 }},
+	skills: ["Nature"],
+	languageProfs : ["Birdfolk", "Auran (understand only)"],
+	weaponprofs : [true, false, []],
+	toolProfs : [["brewer's, carpenter's, or smith's tools", 1]],
+	age : " reach adulthood at 18 years and live until around 70",
+	height : " range from 4 to 5 feet",
+	weight : " weigh around 90 lbs",
+	improvements : "Huden Gallus: +2 Wisdom and +1 Dexterity.",
+	scores : [0, 1, 0, 0, 2, 0],
+	trait : "Huden Gallus (+2 Wisdom and +1 Dexterity)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nCommunal: History checks about the history, culture, or community of my race are made with double proficiency bonus.\nSeedspeech. I can communicate simple ideas to plants, and am able to interpret their responses in simple language.",
+	features : {
+		"glide" : {
+			name : "Glide",
+			minlevel : 1,
+			action : ["reaction", " (falling)"]
+		},
+		"wing flap" : {
+			name : "Wing Flap",
+			minlevel : 1,
+			action : ["bonus action",""]
+		}
+	}
+};
+
+RaceList["sable luma"] = {
+	regExpSearch : /^(?=.*luma)(?=.*(sable)).*$/i,
+	name : "Sable Luma",
+	sortname : "Luma, Sable",
+	source : ["HW", 17],
+	plural : "Sable Lumas",
+	size : 2,
+	speed : {walk : {spd : 25, enc: 15}},
+	savetxt : { adv_vs : ["poison"]},
+	dmgres : ["Poison"],
+	languageProfs : ["Birdfolk", "Auran (can't speak)"],
+	age : " reach adulthood around 20, live until 70.",
+	height : " around 3 feet tall.",
+	weight : " around 30 lbs.",
+	improvements : "Sable Luma: +2 Charisma and +1 Constitution;",
+	scores : [0, 0, 1, 0, 0, 2],
+	trait : "Sable Luma (+2 Charisma and +1 Constitution)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nFated: Once per Long Rest I can reroll any attack, skill check, or saving throw before the outcome is known.\nHard to Read: Insight checks against me have disadvantage, and my deception checks against non-luma have advantage.",
+	abilitysave : 6,
+	spellcastingAbility : 6,
+	features : {
+		"glide" : {
+			name : "Glide",
+			minlevel : 1,
+			action : ["reaction", " (falling)"]
+		},
+		"wing flap" : {
+			name : "Wing Flap",
+			minlevel : 1,
+			action : ["bonus action",""]
+		}
+	},
+	spellcastingBonus : {
+		name : "Touched",
+		"class" : "sorcerer",
+		level : [0, 0],
+		firstcol : 'atwill'
+	}
+};
+
+RaceList["sera luma"] = {
+	regExpSearch : /^(?=.*luma)(?=.*(sera)).*$/i,
+	name : "Sera Luma",
+	sortname : "Luma, Sera",
+	source : ["HW", 17],
+	plural : "Sera Lumas",
+	size : 2,
+	speed : {walk : {spd : 25, enc: 15}},
+	skills : ["Performance"],
+	languageProfs : ["Birdfolk", "Auran (can't speak)"],
+	age : " reach adulthood around 20, live until 70.",
+	height : " around 3 feet tall.",
+	weight : " around 30 lbs.",
+	improvements : "Sable Luma: +2 Charisma and +1 Constitution;",
+	scores : [0, 0, 1, 0, 0, 2],
+	trait : "Sable Luma (+2 Charisma and +1 Constitution)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nFated: Once per Long Rest I can reroll any attack, skill check, or saving throw before the outcome is known.",
+	abilitysave : 6,
+	spellcastingAbility : 6,
+	features : {
+		"glide" : {
+			name : "Glide",
+			minlevel : 1,
+			action : ["reaction", " (falling)"]
+		},
+		"wing flap" : {
+			name : "Wing Flap",
+			minlevel : 1,
+			action : ["bonus action",""]
+		},
+		"charm person" : {
+			name : "Charm Person",
+			minlevel : 1,
+			usages : 1,
+			recovery : "long rest",
+			tooltip : "(Songbird)",
+			action : ["action", ""],
+			spellcastingBonus : {
+				name : "Songbird",
+				spells : ["charm person"],
+				selection : ["charm person"],
+				oncelr : true
+			}
+		}
+	},
+	spellcastingBonus : {
+		name : "Touched",
+		"class" : "sorcerer",
+		level : [0, 0],
+		firstcol : 'atwill'
+	}
+};
+
+RaceList["maran raptor"] = {
+	regExpSearch : /^(?=.*raptor)(?=.*(maran)).*$/i,
+	name : "Maran Raptor",
+	sortname : "Raptor, Maran",
+	source : ["HW", 18],
+	plural : "Maran Raptors",
+	size : 2,
+	speed : {
+		walk : {spd : 25, enc : 15},
+		swim : {spd : 25, enc : 15}
+	},
+	skills : ["Perception"],
+	weaponsAdd : ["Birdfolk Talons"],
+	languageProfs : ["Birdfolk", "Auran (can't speak)"],
+	weaponprofs : [false, false, ["longbow", "shortbow", "spear"]],
+	age : " reach maturity around 20, living over 100 years.",
+	height : " less than 4 feet tall.",
+	weight : " around 35 lbs.",
+	improvements : "Maran Raptor: +2 Dexterity and +1 Intelligence;",
+	scores : [0, 2, 0, 1, 0, 0],
+	trait : "Maran Raptor (+2 Dexterity and +1 Intelligence)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nTalons: My unarmed strikes deal 1d4 piercing damage and I have advantage on Athletics check for climbing.\nWoodland Hunter: I turn 3/4 cover into half cover and half cover into no cover.\nHunter's Training: Longbows are not heavy weapons for me.\nPatient: I have advantage on an attack roll or ability check made as part of a readied action.",
+	features : {
+		"glide" : {
+			name : "Glide",
+			minlevel : 1,
+			action : ["reaction", " (falling)"]
+		}
+	}
+};
+
+RaceList["mistral raptor"] = {
+	regExpSearch : /^(?=.*raptor)(?=.*(mistral)).*$/i,
+	name : "Mistral Raptor",
+	sortname : "Raptor, Mistral",
+	source : ["HW", 18],
+	plural : "Mistral Raptors",
+	size : 2,
+	speed : {
+		walk : {spd : 25, enc : 15}
+	},
+	skills : ["Perception", "Acrobatics"],
+	weaponsAdd : ["Birdfolk Talons"],
+	languageProfs : ["Birdfolk", "Auran (can't speak)"],
+	weaponprofs : [false, false, ["longbow", "shortbow", "spear"]],
+	age : " reach maturity around 20, living over 100 years.",
+	height : " less than 4 feet tall.",
+	weight : " around 35 lbs.",
+	improvements : "Mistral Raptor: +2 Dexterity and +1 Wisdom;",
+	scores : [0, 2, 0, 0, 1, 0],
+	trait : "Mistral Raptor (+2 Dexterity and +1 Wisdom)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nTalons: My unarmed strikes deal 1d4 piercing damage and I have advantage on Athletics check for climbing.\nWoodland Hunter: I turn 3/4 cover into half cover and half cover into no cover.\nHunter's Training: Longbows are not heavy weapons for me.\nAerial Defense: Attacks against me while I'm falling, gliding, or jumping have disadvantage.",
+	features : {
+		"glide" : {
+			name : "Glide",
+			minlevel : 1,
+			action : ["reaction", " (falling)"]
+		}
+	}
+};
+
+RaceList["stout strig"] = {
+	regExpSearch : /^(?=.*strig)(?=.*(stout)).*$/i,
+	name : "Stout Strig",
+	sortname : "Strig, Stout",
+	source : ["HW", 20],
+	plural : "Stout Strigs",
+	size : 3,
+	speed : {walk : {spd : 30, enc : 20}},
+	skills : ["Intimidation"],
+	weapons : ["Birdfolk Talons"],
+	languageprofs : ["Birdfolk", "Auran (can't speak)"],
+	vision : [["Darkvision", 60]],
+	age : " mature around 15, live to 80.",
+	height : " 4 to 5 feet.",
+	weight : " around 110 lbs.",
+	improvements : "Stout Strig: +2 Strength and +1 Constitution.",
+	scores : [2, 0, 1, 0, 0, 0],
+	trait : "Stout Strig (+2 Strength and +1 Constitution)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nTalons: My unarmed strikes deal 1d4 piercing damage and I have advantage on Athletics check for climbing.\nPatterned Feathers: I have advantage on Stealth checks to hide in a forest.\nBrawler: When I hit someone with my talons I can grapple them as a bonus action.",
+	features : {
+		"glide" : {
+			name : "Glide",
+			minlevel : 1,
+			action : ["reaction", " (falling)"]
+		},
+		"brawler" : {
+			name : "Brawler",
+			minlevel : 1,
+			action : ["bonus action", " (grapple)"]
+		}
+	}
+};
+
+RaceList["swift strig"] = {
+	regExpSearch : /^(?=.*strig)(?=.*(swift)).*$/i,
+	name : "Swift Strig",
+	sortname : "Strig, Swift",
+	source : ["HW", 20],
+	plural : "Swift Strigs",
+	size : 3,
+	speed : {walk : {spd : 35, enc : 25}},
+	skills : ["Survival"],
+	weapons : ["Birdfolk Talons"],
+	languageprofs : ["Birdfolk", "Auran (can't speak)"],
+	vision : [["Darkvision", 60]],
+	age : " mature around 15, live to 80.",
+	height : " 4 to 5 feet.",
+	weight : " around 110 lbs.",
+	improvements : "Swift Strig: +2 Strength and +1 Dexterity.",
+	scores : [2, 1, 0, 0, 0, 0],
+	trait : "Swift Strig (+2 Strength and +1 Dexterity)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nTalons: My unarmed strikes deal 1d4 piercing damage and I have advantage on Athletics check for climbing.\nPatterned Feathers: I have advantage on Stealth checks to hide in a forest.",
+	features : {
+		"glide" : {
+			name : "Glide",
+			minlevel : 1,
+			action : ["reaction", " (falling)"]
+		}
+	}
+};
+
+WeaponsList["birdfolk talons"] = {
+	baseWeapon : "unarmed strike",
+	regExpSearch : /^(?=.*(\bbirdfolk?\b))(?=.*\btalons?\b).*$/i,
+	name : "Birdfolk Talons",
+	soruce : ["HW", 12],
+	ability : 1,
+	type : "Natural",
+	damage : [1, 4, "piercing"]
+};
+
+RaceList["grove cervan"] = {
+	regExpSearch : /^(?=.*cervan)(?=.*(grove)).*$/i,
+	name : "Grove Cervan",
+	sortname : "Cervan, Grove",
+	source : ["HW", 22],
+	plural : "Grove Cervans",
+	size : 3,
+	speed : {walk : {spd : 35, enc : 25}},
+	skillstxt : "Choose one from Athletics, Medicine, Nature, or Survival",
+	languageprofs : ["Birdfolk", "Cervan (no writing)"],
+	age : " mature around 12, live for 100-150 years.",
+	height : " 5 to 6 feet.",
+	weight : " 130-180 lbs.",
+	improvements : "Grove Cervan: +2 Constitution and +1 Dexterity.",
+	scores : [0, 1, 2, 0, 0, 0],
+	trait : "Grove Cervan (+2 Constitution and +1 Dexterity)" + (typePF ? " " : "\n") + "Practical: I gain proficiency in Athletics, Medicine, Nature, or Survival.\nSurge of Vigor: If an attack does more than half of my remaining hit points in damage, I regain 1d12 + my Constitution modifier immediately, once per long rest.\nStanding Leap: my long jump is 30 and my high jump is 15 without running start.\nNimble Step: Opportunity attacks made against me are at disadvantage.",
+	features : {
+		"surge of vigor" : {
+			name : "Surge of Vigor",
+			usages : 1,
+			recovery : "long rest"
+		}
+	}
+};
+
+RaceList["pronghorn cervan"] = {
+	regExpSearch : /^(?=.*cervan)(?=.*(pronghorn)).*$/i,
+	name : "Pronghorn Cervan",
+	sortname : "Cervan, Pronghorn",
+	source : ["HW", 22],
+	plural : "Pronghorn Cervans",
+	size : 3,
+	speed : {walk : {spd : 30, enc : 20}},
+	skillstxt : "Choose one from Athletics, Medicine, Nature, or Survival",
+	languageprofs : ["Birdfolk", "Cervan (no writing)"],
+	weapons : ["Antlers"],
+	age : " mature around 12, live for 100-150 years.",
+	height : " close to 7 feet.",
+	weight : " over 200 lbs.",
+	improvements : "Pronghorn Cervan: +2 Constitution and +1 Strength.",
+	scores : [1, 0, 2, 0, 0, 0],
+	trait : "Pronghorn Cervan (+2 Constitution and +1 Strength)" + (typePF ? " " : "\n") + "Practical: I gain proficiency in Athletics, Medicine, Nature, or Survival.\nSurge of Vigor: If an attack does more than half of my remaining hit points in damage, I regain 1d12 + my Constitution modifier immediately, once per long rest.\nRobust Build: My carrying capacity is doubled, as is the weight I can push, drag, or lift.\nAntlers: I can gore with my antlers. I can also charge as a bonus action if I spend 20 feet in a straight line, doing 1d6 extra damage. If the target is Large or smaller, they make a Strength save DC 8 + Strength + proficiency or are pushed 10 feet back.",
+	features : {
+		"surge of vigor" : {
+			name : "Surge of Vigor",
+			usages : 1,
+			recovery : "long rest"
+		},
+		"charge" : {
+			name : "Charge",
+			actions : ["bonus action", ""]
+		}
+	},
+	carryingCapacity : 2
+};
+
+WeaponsList["antlers"] = {
+	regExpSearch : /^(?=.*\bantlers?\b).*$/i,
+	name : "Antlers",
+	source : ["HW", 23],
+	ability : 1,
+	type : "Natural",
+	damage : [1, 6, "piercing"],
+	range : "Melee",
+	description : "",
+	abilitytodamage : true,
+	dc : true,
+	monkweapon : true
+}
+
+RaceList["hedge"] = {
+	regExpSearch : /^(?=.*hedge).*$/i,
+	name : "Hedge",
+	source : ["HW", 24],
+	plural : "Hedges",
+	size : 2,
+	speed : {
+		walk : {spd : 25, enc: 15},
+		burrow : {spd : 15, enc: 10}
+	},
+	languageProfs : ["Birdfolk", "Hedge"],
+	armorOptions : {
+		regExpSearch : /^(?=.*spiny)(?=.*quills).*$/i,
+		name : "Spiny Quills",
+		source : ["HW", 25],
+		ac : 14
+	},
+	age : " mature around 20, live for 120 years.",
+	height : " are between 3 and 4 feet tall.",
+	weight : " weigh around 70 lbs.",
+	improvements : "Hedge: +2 Charisma and +1 Wisdom.",
+	scores : [0, 0, 0, 0, 1, 2],
+	trait : "Hedge (+2 Charisma and +1 Wisdom)" + (typePF ? " " : "\n") + "Natural Burrower: I can burrow through soil but not anything more substantial.\nSpiny Quills: I can't wear armor but can use shields. My AC is 14 + DEX\nCurl Up: I can use my action to curl up. While curled up, I can't move, attack, or cast spells with S components. My AC becomes 19, ignoring DEX. I can still use a shield. A creature that misses me with a melee attack takes 2d4 piercing damage. If I'm hit while curled up, I get knocked prone.\nI can communicate simple ideas with bugs.",
+	spellcastingAbility : 6,
+	spellcastingBonus : [{
+		name : "Forest Magic",
+		spells : ["druidcraft"],
+		selection : ["druidcraft"],
+		firstCol : 'atwill'
+	}],
+	features : {
+		"animal messenger" : {
+			name : "Forest Magic",
+			minlevel : 1,
+			usages : 1,
+			recovery : "short rest",
+			spellcastingBonus : {
+				name : "Forest Magic",
+				spells : ["animal messenger"],
+				selection : ["animal messenger"],
+				firstCol : 'oncesr'
+			}
+		},
+		"curl up" : {
+			name : "Curl Up",
+			minlevel : 1,
+			actions : ["action", ""]
+		}
+	}
+};
+
+RaceList["jerbeen"] = {
+	regExpSearch : /^(?=.*hedge).*$/i,
+	name : "Jerbeen",
+	source : ["HW", 27],
+	plural : "Jerbeens",
+	size : 2,
+	speed : {walk : {spd : 30, enc : 20}},
+	languageProfs : ["Birdfolk", "Jerbeen"],
+	age : " mature around 5 years and live for 40",
+	height : " stand between 2 and 3 feet tall",
+	weight : " weigh between 20-40 lbs.",
+	improvements: "Jerbeen: +2 Dexterity and +1 Charisma",
+	scores : [0, 2, 0, 0, 0, 1],
+	trait : "Jerbeen (+2 Dexterity and +1 Charisma)" + (typePF ? " " : "\n") + "Standing Leap: My long jump is 30 feet and high jump is 15 feet, without running start.\nNimbleness: I can move through the space of a creature a larger size than me.\nTake Heart: I have advantage on STR saves and saves against frighten if I have a non-frightened and non-incapacitated ally I can see or hear within 5 feet.\nTeam Tactics: I can use the Help action as a bonus action.",
+	features : {
+		"team tactics" : {
+			name : "Help",
+			actions : ["bonus action", ""]
+		}
+	}
+};
+
+RaceList["mapach"] = {
+	regExpSearch : /^(?=.*mapach).*$/i,
+	name : "Mapach",
+	source : ["HW", 28],
+	plural : "Mapachs",
+	size : 3,
+	speed : {
+		walk : { spd : 30, enc: 20 },
+		climb : { spd : 20, enc: 10 }
+	},
+	languageProfs : ["Birdfolk", "Mapach"],
+	vision : [["Darkvision", 60]],
+	savetxt : { adv_vs : ["poison"]},
+	dmgres : ["Poison"],
+	toolProfs : ["Tinker's Tools"],
+	age : " mature at an average pace, reaching adulthood at 15 years and live well past 90",
+	height : " range from 4 to 5 feet",
+	weight : " weigh around 90-160 lbs",
+	improvements : "Mapach: +2 Wisdom and +1 Constitution;",
+	scores : [0, 0, 1, 0, 2, 0],
+	trait : "Mapach (+2 Wisdom and +1 Constitution)" + (typePF ? " " : "\n") + "Expert Climbers: I have a climbing speed of 20 feet.\nScroungecraft: I can construct crude versions of common items from materials around me. 10 minutes to craft a tool or piece of adenturing gear worth 30 gp or less, lasting 1 hour. Can spend 8 hours to make a scroungecrafted item permanent.\nSkulker: advantage on Stealth checks made in dim light and darkness.",
+};
+
+RaceList["vulpin"] = {
+	regExpSearch : /vulpin/i,
+	name : "Vulpin",
+	source : ["HW", 30],
+	plural : "Vulpin",
+	size : 3,
+	speed : { walk : { spd : 30, enc: 20 }},
+	languageProfs : ["Birdfolk", "Vulpin"],
+	weaponOptions : {
+		baseWeapon : "unarmed strike",
+		regExpSearch : /^(?=.*vulpin)(?=.*\bbite?\b).*$/i,
+		name : "Vulpin Bite",
+		source : ["HW", 30],
+		damage : [1, 6, "piercing"],
+		description : "Finesse"
+	},
+	weaponsAdd : ["Vulpin Bite"],
+	vision : [["Darkvision", 60]],
+	age : " mature at an average pace, reaching adulthood at 15 years and live well past 90",
+	height : " range from 4 and a half to 5 feet",
+	weight : " weigh around 90-140 lbs",
+	improvements : "Vulpin: +2 Intelligence and +1 Charisma;",
+	scores : [0, 0, 0, 2, 0, 1],
+	trait : "Vulpin (+2 Intelligence and +1 Charisma)" + (typePF ? " " : "\n") + "Bite: I can bite as an unarmed strike, dealing 1d6 piercing damage. Can use STR or DEX.\nBewitching Guile: I can cast charm person at level 1, ambush prey at level 3, and fear at level 5, using Intelligence.",
+	abilitysave : 4,
+	spellcastingAbility : 4,
+	features : {
+		"charm person" : {
+			name : "Charm Person",
+			minlevel : 1,
+			usages : 1,
+			recovery : "long rest",
+			tooltip : "(Bewitching Guile)",
+			action : ["action", ""],
+			spellcastingBonus : {
+				name : "Bewitching Guile (level 1)",
+				spells : ["charm person"],
+				selection : ["charm person"],
+				oncelr : true
+			}
+		},
+		"ambush prey" : {
+			name : "Ambush Prey",
+			minlevel : 3,
+			usages : 1,
+			recovery : "long rest",
+			tooltip : "(Bewitching Guile)",
+			action : ["action", ""],
+			spellcastingBonus : {
+				name : "Bewitching Guile (level 3)",
+				spells : ["ambush prey"],
+				selection : ["ambush prey"],
+				oncelr : true
+			}
+		},
+		"fear" : {
+			name : "Fear",
+			minlevel : 5,
+			usages : 1,
+			recovery : "long rest",
+			tooltip : "(Bewitching Guile)",
+			action : ["action", ""],
+			spellcastingBonus : {
+				name : "Bewitching Guile (level 5)",
+				spells : ["fear"],
+				selection : ["fear"],
+				oncelr : true
+			}
+		}
+	}
+};
+
+/*
 Subclasses
 */
 AddSubClass("druid", "circle of the warden", {
@@ -977,70 +946,76 @@ AddSubClass("cleric", "community domain", {
 	}
 });
 
-/*
 AddSubClass("cleric", "night domain", {
 	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*(night)).*$/i,
 	subname : "Night Domain",
 	source : ["HW", 40],
 	spellcastingExtra : ["sleep", "veil of dusk", "darkness", "moonbeam", "nondetection", "globe of twilight", "divination", "stellar bodies", "dream", "seeming"],
-	subclassfeature1: { name: "Eyes of Twilight", source: ["HW", 40], minlevel: 1, description: "\n   I gain 60 ft darkvision", vision: [["Darkvision", 60]] },
-	"subclassfeature1.1" : {
-		name : "Ward of Shadows",
-		source : ["HW", 40],
-		description : desc([
-			"When a creature I can see within 30 ft attacks me, I can impose disadvantage on the attack roll, so long as the creature can be blinded."
-		]),
-		usages : "Wisdom modifier per ",
-		usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
-		action : ["reaction", ""],
-		recovery : "long rest"
-	},
-	"subclassfeature2" : {
-		name : "Channel Divinity: Invocation of Night",
-		source : ["HW", 40],
-		description : desc([
-			"I can extinguish all magical and nonmagical light within 30 feet. Each enemy within 30 feet makes a Constitution save or is blinded for a number of rounds equal to my cleric level. They repeat the save at the end of their turns."
-		])
-	},
-	"subclassfeature6" : {
-		name : "Channel Divinity: Improved Ward",
-		source : ["HW", 41],
-		description : desc(["I can use Ward of Shadow to protect another creature within 30 feet of me."])
-	},
-	"subclassfeature8" : {
-		name : "Eye of Twilight improvement",
-		source : ["HW", 40],
-		description : desc(["I have darkvision out to 120 feet, that works in both magical and nonmagical darkness."]),
-		vision : [["Darkvision", 120]]
-	},
-	"subclassfeature8.1" : {
-		name : "Veil of Dreams",
-		source : ["HW", 41],
-		description : desc([
-			"I can add my Cleric level to the dice rolled for the Sleep spell. I can choose the order in which creatures are affected by the Sleep spell. If the first creature is unaffected, the spell will instead skip this creature. A creature under my Sleep spell can only be woken until the start of my next turn."
-		])
-	},
-	"subclassfeature17" : {
-		name : "Eye of Twilight improvement",
-		source : ["HW", 41],
-		description : desc([
-			"Once per day I can give myself truesight out to 120 feet for a number of minutes equal to my Wisdom modifier. It only functions in magical or nonmagical darkness."
-		]),
-		usages : 1,
-		recovery : "long rest"
-	},
-	"subclassfeature17.1" : {
-		name : "Creature of the Night",
-		source : ["HW", 41],
-		description : desc([
-			"For 1 minute, I emit magical darkness in a 30 foot radius, and lightly obscuring shadows for another 50 feet. Only light produced by a 9th level spell or similar can negate the darkness. Enemies in the darkness are blinded and frightened as long as they are in it."
-		]),
-		usages : 1,
-		recovery : "long rest",
-		actions : [["action", " (activate)"], ["action", " (deactivate)"]]
+	features : {
+		subclassfeature1: {
+			name: "Eyes of Twilight",
+			source: ["HW", 40],
+			minlevel: 1,
+			description: "\n   I gain 60 ft darkvision",
+			vision: [["Darkvision", 60]]
+		},
+		"subclassfeature1.1" : {
+			name : "Ward of Shadows",
+			source : ["HW", 40],
+			description : desc([
+				"When a creature I can see within 30 ft attacks me, I can impose disadvantage on the attack roll, so long as the creature can be blinded."
+			]),
+			usages : "Wisdom modifier per ",
+			usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+			action : ["reaction", ""],
+			recovery : "long rest"
+		},
+		"subclassfeature2" : {
+			name : "Channel Divinity: Invocation of Night",
+			source : ["HW", 40],
+			description : desc([
+				"I can extinguish all magical and nonmagical light within 30 feet. Each enemy within 30 feet makes a Constitution save or is blinded for a number of rounds equal to my cleric level. They repeat the save at the end of their turns."
+			])
+		},
+		"subclassfeature6" : {
+			name : "Channel Divinity: Improved Ward",
+			source : ["HW", 41],
+			description : desc(["I can use Ward of Shadow to protect another creature within 30 feet of me."])
+		},
+		"subclassfeature8" : {
+			name : "Eye of Twilight improvement",
+			source : ["HW", 40],
+			description : desc(["I have darkvision out to 120 feet, that works in both magical and nonmagical darkness."]),
+			vision : [["Darkvision", "+60"]]
+		},
+		"subclassfeature8.1" : {
+			name : "Veil of Dreams",
+			source : ["HW", 41],
+			description : desc([
+				"I can add my Cleric level to the dice rolled for the Sleep spell. I can choose the order in which creatures are affected by the Sleep spell. If the first creature is unaffected, the spell will instead skip this creature. A creature under my Sleep spell can only be woken until the start of my next turn."
+			])
+		},
+		"subclassfeature17" : {
+			name : "Eye of Twilight improvement",
+			source : ["HW", 41],
+			description : desc([
+				"Once per day I can give myself truesight out to 120 feet for a number of minutes equal to my Wisdom modifier. It only functions in magical or nonmagical darkness."
+			]),
+			usages : 1,
+			recovery : "long rest"
+		},
+		"subclassfeature17.1" : {
+			name : "Creature of the Night",
+			source : ["HW", 41],
+			description : desc([
+				"For 1 minute, I emit magical darkness in a 30 foot radius, and lightly obscuring shadows for another 50 feet. Only light produced by a 9th level spell or similar can negate the darkness. Enemies in the darkness are blinded and frightened as long as they are in it."
+			]),
+			usages : 1,
+			recovery : "long rest",
+			actions : [["action", " (activate)"], ["action", " (deactivate)"]]
+		}
 	}
 });
-*/
 
 AddSubClass("fighter", "scofflaw", {
 	regExpSearch : /^(?=.*scofflaw).*$/i,
@@ -1115,75 +1090,220 @@ AddSubClass("fighter", "scofflaw", {
 	}
 });
 
+AddSubClass("warlock", "the predator", {
+	regExpSearch : /^(?=.*predator)(?=.*warlock).*$/i,
+	subname : "the Predator",
+	source : ["HW:TotSG", 10],
+	spellcastingExtra : ["hunter's mark", "jump", "alter self", "ambush prey", "blink", "slow", "dominate beast", "freedom of movement", "contagion", "mislead"],
+	features : {
+		subclassfeature1: {
+			name : "Bonus Proficiencies",
+			source : ["HW:TotSG", 10],
+			minlevel: 1,
+			description: desc([
+				"I gain proficiency with Survival and can double my proficiency bonus in Survival checks."
+			]),
+			skills : [["Survival", "full"]]
+		},
+		"subclassfeature1.1" : {
+			name : "Form of the Beast",
+			source : ["HW:TotSG", 10],
+			minlevel : 1,
+			description : desc([
+				"I can use a bonus action to take on a beastly form",
+				"I gain temporary hit points equal to five times my warlock level, to maximum of 50 hit points.",
+				"I gain advantage on stealth, perception, and survival checks to track and stalk prey.",
+				"I gain a bite (1d6 piercing) and claw (1d4 slashing) attack, and can use my charisma modifier. If I bite with an action, I can claw with my bonus action"
+			]),
+			weaponOptions : [{
+				baseWeapon : "unarmed strike",
+				regExpSearch : /^(?=.*beast)(?=.*\bbite?\b).*$/i,
+				name : "Beast Bite",
+				source : ["HW:TotSG", 10],
+				damage : [1, 6, "piercing"],
+				ability : 6
+			},{
+				baseWeapon : "unarmed strike",
+				regExpSearch : /^(?=.*beast)(?=.*\bclaws?\b).*$/i,
+				name : "Beast Claws",
+				source : ["HW:TotSG", 10],
+				damage : [1, 6, "piercing"],
+				ability : 6
+			}],
+			weaponsAdd : ["Beast Bite", "Beast Claws"],
+			usages : 1,
+			recovery : "long rest"
+		},
+		subclassfeature5 : {
+			name : "Beast Form",
+			source : ["HW:TotSG", 10],
+			minlevel : 5,
+			description : desc([
+				"Form of the Beast improvements:",
+				"I can make two claw attacks as a bonus action after biting with my action.",
+				"I can dash as a bonus action."
+			]),
+			actions : ["bonus action", " (Dash)"]
+		},
+		subclassfeature6 : {
+			name : "Thrill of the Hunt",
+			source : ["HW:TotSG", 11],
+			minlevel : 6,
+			description : desc([
+				"I can deal 3d6 extra necrotic damage on a bite, once per turn.",
+				"At 10th level, this becomes 5d6 necrotic damage."
+			]),
+			additional : levels.map(function (n) { return n < 10 ? "3" : n >= 10 ? "5" : "d6 necrotic damage"; })
+		},
+		subclassfeature10 : {
+			name : "Fearsome Presence",
+			source : ["HW:TotSG", 11],
+			minlevel : 10,
+			description : desc([
+				"I can make creatures within 30 feet roll a Wisdom save against my spell save.",
+				"On a fail, creatures are frightened of me for 1 minute.",
+				"They are also restrained until the end of my next turn.",
+				"Creatures can repeat their save at the end of each of their turns."
+			]),
+			usages : 1,
+			recovery : "short rest",
+			actions : ["action", ""]
+		},
+		subclassfeature14 : {
+			name : "Uncaged Beast",
+			source : ["HW:TotSG", 11],
+			description : desc([
+				"If I take damage from a target within 5 ft, I can use a reaction to bite or claw that target.",
+				"When I take damage, I can use a reaction to immediately take the Form of the Beast. I can also include the aforementioned attack."
+			]),
+			actions : ["reaction", ""]
+		}
+	}
+});
+
+AddWarlockInvocation("Feral Transformation (prereq: 7th level)", {
+	name : "Feral Transformation",
+	description : desc([
+		"I can transform into a Dire Wolf, Giant Spider, or Giant Vulture, like a Wild shape but requiring concentration.",
+		"I can remain in that form for 1 hour."
+	]),
+	usages : 1,
+	recovery : "short rest",
+	actions : ["action", ""]
+});
+
+AddSubClass("wizard", "leyline magic", {
+	regExpSearch : /(leyline magic|leyline mage)/i,
+	subname : "Leyline Magic",
+	fullname : "Leyline Mage",
+	source : ["HW:TotSG", 11],
+	features : {
+		subclassfeature2 : {
+			name : "Natural Attunement",
+			source : ["HW:TotSG", 12],
+			minlevel : 2,
+			description : desc([
+				"Whenever I finish a long rest, I can prepare spells according to my environment.",
+				"I always have these spells prepared, but they are not in my spellbook."
+			]),
+			choices : ["Arctic", "Coast", "Desert", "Forest", "Grassland", "Mountain", "Swamp", "Underdark"],
+			"arctic" : {
+				name : "Arctic Leyline",
+				description : "I am attuned to the arctic, giving me access to arctic magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
+				spellcastingExtra : ["grease", "spiny shield", "hold person", "spike growth", "sleet storm", "slow", "freedom of movement", "ice storm", "commune with nature", "cone of cold"]
+			},
+			"coast" : {
+				name : "Coast Leyline",
+				description : "I am attuned to the coast, giving me access to coast magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
+				spellcastingExtra : ["create or destroy water", "thunderwave", "mirror image", "misty step", "water breathing", "water walk", "control water", "freedom of movement", "conjure elemental", "scrying"]
+			},
+			"desert" : {
+				name : "Desert Leyline",
+				description :  "I am attuned to the desert, giving me access to desert magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
+				spellcastingExtra : ["color spray", "create or destroy water", "blur", "silence", "create food and water", "protection from energy", "blight", "hallucinatory terrain", "insect plague", "wall of stone"]
+			},
+			"forest" : {
+				name : "Forest Leyline",
+				description :  "I am attuned to the forest, giving me access to forest magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
+				spellcastingExtra : ["entangle", "veil of dusk", "barkskin", "spider climb", "call lightning", "plant growth", "divination", "freedom of movement", "commune with nature", "tree stride"]
+			},
+			"grassland" : {
+				name : "Grassland Leyline",
+				description :  "I am attuned to the grasslands, giving me access to grassland magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
+				spellcastingExtra : ["burning hands", "elevated sight", "invisibility", "pass without trace", "daylight", "haste", "divination", "freedom of movement", "dream", "insect plague"]
+			},
+			"mountain" : {
+				name : "Mountain Leyline",
+				description :  "I am attuned to the mountains, giving me access to mountain magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
+				spellcastingExtra : ["fog cloud", "thunderwave", "spider climb", "spike growth", "lightning bolt", "meld into stone", "stone shape", "stoneskin", "passwall", "wall of stone"]
+			},
+			"swamp" : {
+				name : "Swamp Leyline",
+				description :  "I am attuned to the swamp, giving me access to swamp magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
+				spellcastingExtra : ["faerie fire", "veil of dusk", "darkness", "melf's acid arrow", "water walk", "stinking cloud", "freedom of movement", "locate creature", "insect plague", "scrying"]
+			},
+			"underdark" : {
+				name : "Underdark Leyline",
+				description :  "I am attuned to the underdark, giving me access to underdark magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
+				spellcastingExtra : ["spider climb", "web", "gaseous form", "stinking cloud", "greater invisibility", "stone shape", "cloudkill", "insect plague"]
+			}
+		},
+		"subclassfeature2.1" : {
+			name : "Thrum of the Land",
+			source : ["HW:TotSG", 12],
+			minlevel : 2,
+			description : desc([
+				"Whenever I cast a leyline spell while in the environment to which I am attuned, I can do one of:",
+				" • Add +2 bonus to the spell attack.",
+				" • Add +1 bonus to my save DC.",
+				" • I have advantage on concentration checks to maintain concentration on this spell."
+			])
+		},
+		subclassfeature6 : {
+			name : "Biorhythm",
+			source : ["HW:TotSG", 12],
+			minlevel : 6,
+			description : desc([
+				"Whenever I use Arcane Recovery in my attuned terrain, I regain 1d8 hit points per recovered spell slot.",
+				"I can reattune on a short rest, as in Natural Attunement"
+			])
+		},
+		subclassfeature10 : {
+			name : "Natural Disruption",
+			source : ["HW:TotSG", 12],
+			minlevel : 10,
+			description : desc([
+				"I can cast Counterspell or Dispel Magic at the highest level I can without expending a spell slot."
+			]),
+			usages : 1,
+			recovery : "long rest"
+		},
+		subclassfeature14 : {
+			name : "Leyline Weaving",
+			source : ["HW:TotSG", 12],
+			minlevel : 14,
+			description : desc([
+				"I can spend a 1 hour ritual in meditation to weave a Leyline into even unnatural environments.",
+				"For 24 hours, a 1-mile radius area functions as the terrain I am attuned to.",
+				"If I repeat this ritual every day for a year on the same spot, the Leyline becomes permanent."
+			])
+		},
+		"subclassfeature14.1" : {
+			name : "Thrum of the Land improvement",
+			source : ["HW:TotSG", 12],
+			minlevel : 14,
+			description : desc([
+				"I can add a Thrum of the Land bonus to a single 6th level or higher, so long as I am in my attuned environment."
+			]),
+			usages : 1,
+			recovery : "long rest"
+		}
+	}
+});
+
 /*
 Backgrounds
 */
-BackgroundList["grounded"] = {
-	regExpSearch : /grounded/i,
-	name : "Grounded",
-	source : ["HW", 44],
-	skills : ["Athletics", "Insight"],
-	skillstxt :"Athletics and Insight.",
-	gold : 5,
-	equipleft : [
-		["Walking stick","",""],
-		["Trinket from my culture", "", ""]
-	],
-	equipright : [
-		["Traveler's clothes", "", 1],
-		["Belt pouch (with coins)", "", 1]
-	],
-	feature : "Find Another Path",
-	trait : [
-		"I always second guess my choices.",
-		"I have learned to not let the comments of others affect me.",
-		"I'm eager to show the benefits of my unique perspective.",
-		"I’m slow to trust someone new, but open up over shared hardships.",
-		"I manufacture difficult situations to prove my abilities.",
-		"I get embarrassed easily, even when someone tries to compliment me.",
-		"I will deny my fears to everyone.",
-		"I want to see how others handle situations I'm afraid of."
-	],
-	ideal : [
-		["Adversity", "Adversity: Others think of me as weak, but I will prove my worth with hard work and determination. (Lawful)"],
-		["Encouragement", "Encouragement: I try to seek out and support others like me who are seen as outcasts. (Good)"],
-		["Exploration", "Exploration: I yearn to experience unique cultures and discover new places. (Chaotic)"],
-		["Safety", "Safety. In this dangerous world, it’s best to keep your head down and stay cautious. (Neutral)"]
-		["Rebellion", "Rebellion: Who cares what others think of me, so long as my actions reflect how I feel in my heart? (Chaotic)"],
-		["Compromise", "Compromise: The best way to respect each other's differences is to find a solution that doesn't exclude anyone. (Good)"]
-	],
-	bond : [
-		"My family has been the subject of ridicule ever since I left my home perch.",
-		"A bully from my childhood now holds a position of power in my home perch.",
-		"I follow the teachings of a wise outcast I met in my travels.",
-		"I feel kinship to a culture outside my own.",
-		"I won't tolerate anyone who insults me or my friends.",
-		"I have found a new family on the forest floor, and they mean more to me than anything.",
-	],
-	flaw : [
-		"I am incapable of action when I'm at great heights.",
-		"I lash out at the slightest insult.",
-		"I keep a distance from others so they won't learn of my fears.",
-		"I project my insecurities onto others.",
-		"I am uncouth and mannerless.",
-		"I find it hard to trust other birdfolk."
-	],
-	extra : ["Pick a community place",
-					"Fledgling",
-					"Traitor",
-					"Family",
-					"Banished",
-					"Oddity",
-					"New home"],
-	toolProfs : [["One type of artisan's tools", 1]],
-	lifestyle : "poor"
-};
-
-BackgroundFeatureList["find another path"] = {
-	description : "I can recall the general layout of the land while on the forest floor. I can always find my way around obstacles or needing to climb if such a path exists. I can easily find shelter on the forest floor for myself and five others.",
-	source : ["HW", 44]
-};
-
 BackgroundList["bandit defector"] = {
 	regExpSearch : /(bandit defector|lookout|lifter|thug|runner|hustler|captain)/i,
 	name : "Bandit Defector",
@@ -1250,6 +1370,72 @@ BackgroundList["bandit defector"] = {
 BackgroundFeatureList["bandit routes"] = {
 	description : "As someone who once assisted in countless highway robberies, you are familiar with the roads of the Wood and escape paths used by bandits. When you are not in combat, you (and companions you lead) can travel between locations that cut through forested areas twice as fast as your speed would normally allow.",
 	source : ["HW", 43]
+};
+
+BackgroundList["grounded"] = {
+	regExpSearch : /grounded/i,
+	name : "Grounded",
+	source : ["HW", 44],
+	skills : ["Athletics", "Insight"],
+	skillstxt :"Athletics and Insight.",
+	gold : 5,
+	equipleft : [
+		["Walking stick","",""],
+		["Trinket from my culture", "", ""]
+	],
+	equipright : [
+		["Traveler's clothes", "", 1],
+		["Belt pouch (with coins)", "", 1]
+	],
+	feature : "Find Another Path",
+	trait : [
+		"I always second guess my choices.",
+		"I have learned to not let the comments of others affect me.",
+		"I'm eager to show the benefits of my unique perspective.",
+		"I’m slow to trust someone new, but open up over shared hardships.",
+		"I manufacture difficult situations to prove my abilities.",
+		"I get embarrassed easily, even when someone tries to compliment me.",
+		"I will deny my fears to everyone.",
+		"I want to see how others handle situations I'm afraid of."
+	],
+	ideal : [
+		["Adversity", "Adversity: Others think of me as weak, but I will prove my worth with hard work and determination. (Lawful)"],
+		["Encouragement", "Encouragement: I try to seek out and support others like me who are seen as outcasts. (Good)"],
+		["Exploration", "Exploration: I yearn to experience unique cultures and discover new places. (Chaotic)"],
+		["Safety", "Safety. In this dangerous world, it’s best to keep your head down and stay cautious. (Neutral)"],
+		["Rebellion", "Rebellion: Who cares what others think of me, so long as my actions reflect how I feel in my heart? (Chaotic)"],
+		["Compromise", "Compromise: The best way to respect each other's differences is to find a solution that doesn't exclude anyone. (Good)"]
+	],
+	bond : [
+		"My family has been the subject of ridicule ever since I left my home perch.",
+		"A bully from my childhood now holds a position of power in my home perch.",
+		"I follow the teachings of a wise outcast I met in my travels.",
+		"I feel kinship to a culture outside my own.",
+		"I won't tolerate anyone who insults me or my friends.",
+		"I have found a new family on the forest floor, and they mean more to me than anything.",
+	],
+	flaw : [
+		"I am incapable of action when I'm at great heights.",
+		"I lash out at the slightest insult.",
+		"I keep a distance from others so they won't learn of my fears.",
+		"I project my insecurities onto others.",
+		"I am uncouth and mannerless.",
+		"I find it hard to trust other birdfolk."
+	],
+	extra : ["Pick a community place",
+					"Fledgling",
+					"Traitor",
+					"Family",
+					"Banished",
+					"Oddity",
+					"New home"],
+	toolProfs : [["One type of artisan's tools", 1]],
+	lifestyle : "poor"
+};
+
+BackgroundFeatureList["find another path"] = {
+	description : "I can recall the general layout of the land while on the forest floor. I can always find my way around obstacles or needing to climb if such a path exists. I can easily find shelter on the forest floor for myself and five others.",
+	source : ["HW", 44]
 };
 
 BackgroundList["wind-touched"] = {
@@ -1372,8 +1558,8 @@ FeatsList["woodwise"] = {
 FeatsList["first responder"] = {
 	name : "First Responder",
 	source : ["HW:TotSG", 6],
-	descriptionFull : "You have been specially trained in magical triage and are able to identify the signs of shock and fatigue in those suffering from injuries. You are always ready to provide aid to those in need. You gain the following benefits:\nYou can tell by looking at a creature if it is missing any of its hit points and whether or not it has more than half of its hit points. You also instantly determine if the creature is cursed, diseased, possessed, or afflicted by any of the following conditions: blinded, deafened, exhaustion, frightened, incapacitated, paralyzed, petrified, poisoned, or stunned.\nYou learn the spare the dying cantrip and can cast it as a bonus action.\nYou gain the ability to cast the spell cure wounds without using a spell slot, up to a number of times equal to half your proficiency bonus. You regain all expended uses when you finish a long rest. Wisdom is your spellcasting ability for this spell.",
 	description : "I can instantly determine how many HP someone is missing and what conditions they have. I know spare the dying and can cast Cure Wounds up to half my proficiency bonus, using Wisdom.",
+	descriptionFull : "You have been specially trained in magical triage and are able to identify the signs of shock and fatigue in those suffering from injuries. You are always ready to provide aid to those in need. You gain the following benefits:\n • You can tell by looking at a creature if it is missing any of its hit points and whether or not it has more than half of its hit points. You also instantly determine if the creature is cursed, diseased, possessed, or afflicted by any of the following conditions: blinded, deafened, exhaustion, frightened, incapacitated, paralyzed, petrified, poisoned, or stunned.\n • You learn the spare the dying cantrip and can cast it as a bonus action.\n • You gain the ability to cast the spell cure wounds without using a spell slot, up to a number of times equal to half your proficiency bonus. You regain all expended uses when you finish a long rest. Wisdom is your spellcasting ability for this spell.",
 	spellcastingBonus : [{
 		name : "At will",
 		spellcastingAbility : 5,
@@ -1393,7 +1579,7 @@ FeatsList["first responder"] = {
 FeatsList["flamewoken"] = {
 	name : "Flamewoken",
 	source : ["HW:TotSG", 7],
-	descriptionFull : "Living in the Scorched Grove or other areas touched by elemental fire can sometimes cause strange abilities to manifest among their inhabitants. Known as “flamewoken” by the Tenders, these gifted few have an ability to communicate with fire-aspected creatures and have power over flames. Tenders teach flamewoken among their order to hone their talents in service of nature. However, those outside of the order usually choose to keep their abilities hidden, as such powers are often seen as a curse. You gain the following benefits:\nYou can speak, read, and write Ignan.\nYou learn the produce flame cantrip. Wisdom is your spellcasting ability for this spell.\nAs a bonus action, you can strengthen the power of your flames. The next time you deal fire damage to one or more creatures before the end of your next turn, you can deal an additional 2d10 fire damage to one of those creatures. Once you use this feature, you can’t use it again until you complete a short or long rest.\nYou can whisper magical words in Ignan toward any nonmagical flames you can see within 30 feet of you that could fit within a 5-foot cube. As a bonus action, you can cause these flames to either grow by 5 feet in a single direction, provided there is fuel of some sort present in the new location, or you can extinguish the flames present in this space.",
+	descriptionFull : "Living in the Scorched Grove or other areas touched by elemental fire can sometimes cause strange abilities to manifest among their inhabitants. Known as “flamewoken” by the Tenders, these gifted few have an ability to communicate with fire-aspected creatures and have power over flames. Tenders teach flamewoken among their order to hone their talents in service of nature. However, those outside of the order usually choose to keep their abilities hidden, as such powers are often seen as a curse. You gain the following benefits:\n • You can speak, read, and write Ignan.\n • You learn the produce flame cantrip. Wisdom is your spellcasting ability for this spell.\n • As a bonus action, you can strengthen the power of your flames. The next time you deal fire damage to one or more creatures before the end of your next turn, you can deal an additional 2d10 fire damage to one of those creatures. Once you use this feature, you can’t use it again until you complete a short or long rest.\n • You can whisper magical words in Ignan toward any nonmagical flames you can see within 30 feet of you that could fit within a 5-foot cube. As a bonus action, you can cause these flames to either grow by 5 feet in a single direction, provided there is fuel of some sort present in the new location, or you can extinguish the flames present in this space.",
 	description : "I know Ignan, can cast Produce Flame, can deal 2d10 extra fire damage once per short rest, can cause a 5-foot cube of fire grow by 5 feet in one direction or extinguish them.",
 	spellcastingBonus : [{
 		name : "At will",
@@ -1405,4 +1591,56 @@ FeatsList["flamewoken"] = {
 	actions : ["bonus action", " (2d10 fire)"],
 	usages : 1,
 	recovery : "short rest"
+};
+
+FeatsList["forest sage"] = {
+	name : "Forest Sage",
+	source : ["HW:TotSG", 7],
+	prerequisite : "Druid or wizard",
+	prereqeval : function (v) {
+		return classes.known.druid ? true : false || classes.known.wizard ? true : false;
+	},
+	descriptionFull : "The Tenders value diversity among ideas, and although they began as a purely druidic order, they have since learned to accept many different ways of thinking about the natural world, especially regarding the application of magic. You are either a wizard who has learned to temper your arcane research with an eye to maintaining the delicate balance of natural forces, or you are a druid who has learned a new understanding of natural magic through study and experimentation.\nYou gain the following benefits:\n • Increase your Intelligence or Wisdom score by 1, to a maximum of 20.\n • You can use your choice of Intelligence or Wisdom to make Animal Handling, Arcana, Nature, or Survival checks.\n • You can choose to learn two spells from either the druid or wizard spell list. Spells you choose must be of a level you can cast. The chosen spells count as spells of your class and are added to your spellbook if you are a wizard. The chosen spells use your spellcasting ability.",
+	description : "I can use Intelligence or Wisdom for Animal Handling, Arcana, Nature, or Survival. I learn two Druid or Wizard spells of a level I can cast."
+};
+
+FeatsList["plantmender"] = {
+	name : "Plantmender",
+	source : ["HW:TotSG", 7],
+	prerequisite : "Wisdom score of 13 or higher",
+	prereqeval : function (v) {
+		return 13 <= What("Wis");
+	},
+	descriptionFull : "One of the basic forms of Tender magic, plantmending is often taught to acolytes of the order. Plantmending can be used either to help the forest recover from disasters or to defend against hazards that might be encountered while traveling. You gain the following benefits:\n • You can touch a plant or tree as an action to determine what has occurred to it and the area within its immediate vicinity within the last 24 hours. These events are revealed to you in visions which appear as though you were present as they occurred. After using this ability on a plant, you instantly become aware of its status and health, including any blights or conditions currently affecting it.\n • You learn the mend plants and shillelagh cantrips. Wisdom is your spellcasting ability for these spells.\n • You can cast either the barkskin or spike growth spell once, and you must complete a long rest before you can cast either spell again. Wisdom is your spellcasting ability for these spells.",
+	description : "I can touch a plant to know what happened near it in the past 24 hrs, its status, health, and any conditions. I learn mend plants and shillelagh, and choose between barkskin and spike growth.",
+	spellcastingBonus : [{
+		name : "At will",
+		spellcastingAbility : 5,
+		spells : ["mend plants", "shillelagh"],
+		selection : ["mend plants", "shillelagh"],
+		firstCol : 'atwill'
+	}],
+	choices : ["Barkskin", "Spike Growth"],
+	barkskin : {
+		spellcastingBonus : [{
+			name : "Barkskin",
+			spellcastingAbility : 5,
+			spells : ["barkskin"],
+			selection : ["barkskin"],
+			usages : 1,
+			recovery : "long rest",
+			firstCol : 'oncelr'
+		}]
+	},
+	"spike growth" : {
+		spellcastingBonus : [{
+			name : "Spike Growth",
+			spellcastingAbility : 5,
+			spells : ["spike growth"],
+			selection : ["spike growth"],
+			usages : 1,
+			recovery : "long rest",
+			firstCol : 'oncelr'
+		}]
+	}
 };
