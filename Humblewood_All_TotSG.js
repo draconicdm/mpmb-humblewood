@@ -1,3 +1,6 @@
+if (sheetVersion < 13000007) {
+    throw "This script was made for a newer version of the sheet. Please use the latest version and try again.\nYou can get the latest version over at www.flapkan.com.";
+}
 var iFileName = "Humblewood_All_TotSG.js";
 
 SourceList.HW = {
