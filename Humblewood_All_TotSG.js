@@ -429,9 +429,9 @@ RaceList["sera luma"] = {
 	age : " reach adulthood around 20, live until 70.",
 	height : " around 3 feet tall.",
 	weight : " around 30 lbs.",
-	improvements : "Sable Luma: +2 Charisma and +1 Constitution;",
-	scores : [0, 0, 1, 0, 0, 2],
-	trait : "Sable Luma (+2 Charisma and +1 Constitution)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nFated: Once per Long Rest I can reroll any attack, skill check, or saving throw before the outcome is known.",
+	improvements : "Sera Luma: +2 Charisma and +1 Wisdom;",
+	scores : [0, 0, 0, 0, 1, 2],
+	trait : "Sera Luma (+2 Charisma and +1 Wisdom)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nFated: Once per Long Rest I can reroll any attack, skill check, or saving throw before the outcome is known.\nSongbird: I can cast Charm Person while performing, not requiring somatic components.",
 	abilitysave : 6,
 	spellcastingAbility : 6,
 	features : {
@@ -451,7 +451,6 @@ RaceList["sera luma"] = {
 			usages : 1,
 			recovery : "long rest",
 			tooltip : "(Songbird)",
-			action : ["action", ""],
 			spellcastingBonus : {
 				name : "Songbird",
 				spells : ["charm person"],
@@ -1195,6 +1194,7 @@ AddWarlockInvocation("Feral Transformation (prereq: 7th level)", {
 	actions : ["action", ""]
 });
 
+/*
 AddSubClass("wizard", "leyline magic", {
 	regExpSearch : /(leyline magic|leyline mage)/i,
 	subname : "Leyline Magic",
@@ -1207,49 +1207,38 @@ AddSubClass("wizard", "leyline magic", {
 			minlevel : 2,
 			description : desc([
 				"Whenever I finish a long rest, I can prepare spells according to my environment.",
-				"I always have these spells prepared, but they are not in my spellbook."
+				"I always have these spells prepared, but they are not in my spellbook.",
+				"Note: the Leylines can be added as magic items."
 			]),
-			choices : ["Arctic", "Coast", "Desert", "Forest", "Grassland", "Mountain", "Swamp", "Underdark"],
-			"arctic" : {
+			spellcastingBonus : [{
 				name : "Arctic Leyline",
-				description : "I am attuned to the arctic, giving me access to arctic magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
-				spellcastingExtra : ["grease", "spiny shield", "hold person", "spike growth", "sleet storm", "slow", "freedom of movement", "ice storm", "commune with nature", "cone of cold"]
-			},
-			"coast" : {
+				spells : ["grease", "spiny shield", "hold person", "spike growth", "sleet storm", "slow", "freedom of movement", "ice storm", "commune with nature", "cone of cold"],
+				selection : ["grease", "spiny shield", "hold person", "spike growth", "sleet storm", "slow", "freedom of movement", "ice storm", "commune with nature", "cone of cold"]
+			}, {
 				name : "Coast Leyline",
-				description : "I am attuned to the coast, giving me access to coast magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
-				spellcastingExtra : ["create or destroy water", "thunderwave", "mirror image", "misty step", "water breathing", "water walk", "control water", "freedom of movement", "conjure elemental", "scrying"]
-			},
-			"desert" : {
+				spells : ["create or destroy water", "thunderwave", "mirror image", "misty step", "water breathing", "water walk", "control water", "freedom of movement", "conjure elemental", "scrying"],
+				selection : ["create or destroy water", "thunderwave", "mirror image", "misty step", "water breathing", "water walk", "control water", "freedom of movement", "conjure elemental", "scrying"]
+			}, {
 				name : "Desert Leyline",
-				description :  "I am attuned to the desert, giving me access to desert magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
-				spellcastingExtra : ["color spray", "create or destroy water", "blur", "silence", "create food and water", "protection from energy", "blight", "hallucinatory terrain", "insect plague", "wall of stone"]
-			},
-			"forest" : {
+				spells : ["color spray", "create or destroy water", "blur", "silence", "create food and water", "protection from energy", "blight", "hallucinatory terrain", "insect plague", "wall of stone"],
+				selection : ["color spray", "create or destroy water", "blur", "silence", "create food and water", "protection from energy", "blight", "hallucinatory terrain", "insect plague", "wall of stone"]
+			}, {
 				name : "Forest Leyline",
-				description :  "I am attuned to the forest, giving me access to forest magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
-				spellcastingExtra : ["entangle", "veil of dusk", "barkskin", "spider climb", "call lightning", "plant growth", "divination", "freedom of movement", "commune with nature", "tree stride"]
-			},
-			"grassland" : {
-				name : "Grassland Leyline",
-				description :  "I am attuned to the grasslands, giving me access to grassland magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
-				spellcastingExtra : ["burning hands", "elevated sight", "invisibility", "pass without trace", "daylight", "haste", "divination", "freedom of movement", "dream", "insect plague"]
-			},
-			"mountain" : {
+				spells : ["entangle", "veil of dusk", "barkskin", "spider climb", "call lightning", "plant growth", "divination", "freedom of movement", "commune with nature", "tree stride"],
+				selection : ["entangle", "veil of dusk", "barkskin", "spider climb", "call lightning", "plant growth", "divination", "freedom of movement", "commune with nature", "tree stride"]
+			}, {
+				name : "Grasslands Leyline",
+				spells : ["burning hands", "elevated sight", "invisibility", "pass without trace", "daylight", "haste", "divination", "freedom of movement", "dream", "insect plague"],
+				selection : ["burning hands", "elevated sight", "invisibility", "pass without trace", "daylight", "haste", "divination", "freedom of movement", "dream", "insect plague"]
+			}, {
 				name : "Mountain Leyline",
-				description :  "I am attuned to the mountains, giving me access to mountain magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
-				spellcastingExtra : ["fog cloud", "thunderwave", "spider climb", "spike growth", "lightning bolt", "meld into stone", "stone shape", "stoneskin", "passwall", "wall of stone"]
-			},
-			"swamp" : {
+				spells : ["fog cloud", "thunderwave", "spider climb", "spike growth", "lightning bolt", "meld into stone", "stone shape", "stoneskin", "passwall", "wall of stone"],
+				selection : ["fog cloud", "thunderwave", "spider climb", "spike growth", "lightning bolt", "meld into stone", "stone shape", "stoneskin", "passwall", "wall of stone"]
+			}, {
 				name : "Swamp Leyline",
-				description :  "I am attuned to the swamp, giving me access to swamp magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
-				spellcastingExtra : ["faerie fire", "veil of dusk", "darkness", "melf's acid arrow", "water walk", "stinking cloud", "freedom of movement", "locate creature", "insect plague", "scrying"]
-			},
-			"underdark" : {
-				name : "Underdark Leyline",
-				description :  "I am attuned to the underdark, giving me access to underdark magic" + "\n " + "These are always prepared, don't count to my number of prepared spells, but are not in my spellbook.",
-				spellcastingExtra : ["spider climb", "web", "gaseous form", "stinking cloud", "greater invisibility", "stone shape", "cloudkill", "insect plague"]
-			}
+				spells : ["faerie fire", "veil of dusk", "darkness", "melf's acid arrow", "water walk", "stinking cloud", "freedom of movement", "locate creature", "insect plague", "scrying"],
+				selection : ["faerie fire", "veil of dusk", "darkness", "melf's acid arrow", "water walk", "stinking cloud", "freedom of movement", "locate creature", "insect plague", "scrying"]
+			}]
 		},
 		"subclassfeature2.1" : {
 			name : "Thrum of the Land",
@@ -1303,6 +1292,7 @@ AddSubClass("wizard", "leyline magic", {
 		}
 	}
 });
+*/
 
 /*
 Backgrounds
