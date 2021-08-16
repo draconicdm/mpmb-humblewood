@@ -432,7 +432,7 @@ RaceList["sera luma"] = {
 	improvements : "Sera Luma: +2 Charisma and +1 Wisdom;",
 	scores : [0, 0, 0, 0, 1, 2],
 	trait : "Sera Luma (+2 Charisma and +1 Wisdom)" + (typePF ? " " : "\n") + "Glide: I can slow my fall at 60 feet per round, so long as I don't carry heavy weapons, heavy armor, or a shield.\nWing Flap: I can propel myself half my movement speed as part of a jump.\nFated: Once per Long Rest I can reroll any attack, skill check, or saving throw before the outcome is known.\nSongbird: I can cast Charm Person while performing, not requiring somatic components.",
-	abilitysave : 6,
+	abilitysave : 6, 
 	spellcastingAbility : 6,
 	features : {
 		"glide" : {
